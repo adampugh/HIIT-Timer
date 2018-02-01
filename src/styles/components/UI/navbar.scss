@@ -1,0 +1,27 @@
+.navbar {
+    background: slateblue;
+    padding: 0 10px;
+    h2 {
+        color: white;
+        display: inline;
+    }
+}
+
+.navbar__items {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.navbar__links {
+    margin-top: 25px;
+    a {
+        color: white;
+        padding-left: 15px;
+        text-decoration: none;   
+    }
+}
+
+.navbar__links--active {
+    color: blueviolet;
+}   
