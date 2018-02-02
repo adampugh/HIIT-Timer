@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const navbar = (props) => (
-    <nav className="navbar">
+    <nav className={`navbar ${props.classes}`}>
         <div className="container">
             <div className="navbar__items">
                 <h2>HIIT Timer</h2>

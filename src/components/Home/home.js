@@ -9,7 +9,7 @@ import Footer from "../UI/footer";
 
 const home = () => (
     <div>
-        <Navbar links={["Sign Up", "Log In"]} />
+        <Navbar links={["Sign Up", "Log In"]} classes={"navbar--loggedOut"} />
         <VideoBanner />
         <TextBanner />
         <PhoneBanner />

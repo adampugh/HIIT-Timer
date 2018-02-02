@@ -1,14 +1,22 @@
 .navbar {
-    // background: linear-gradient(141deg, slateblue 0%, #3d73dd 51%, #46b2da 75%);
-    background: transparent;
-    // padding: 0 10px;
+    // background: transparent;
     z-index: 1000;
-    position: absolute;
+    // position: absolute;
     width: 100%;
     h2 {
         color: white;
         display: inline;
     }
+}
+
+.navbar--loggedOut {
+    position: absolute;
+    background: transparent;
+}
+
+.navbar--loggedIn {
+    background: $off-grey;
+    position: relative;
 }
 
 .navbar__items {
