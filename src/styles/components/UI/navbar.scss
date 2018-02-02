@@ -1,8 +1,9 @@
 .navbar {
-    background: linear-gradient(141deg, slateblue 0%, #3d73dd 51%, #46b2da 75%);
-    padding: 0 10px;
+    // background: linear-gradient(141deg, slateblue 0%, #3d73dd 51%, #46b2da 75%);
+    background: transparent;
+    // padding: 0 10px;
     z-index: 1000;
-    position: fixed;
+    position: absolute;
     width: 100%;
     h2 {
         color: white;

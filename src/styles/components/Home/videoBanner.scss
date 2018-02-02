@@ -5,8 +5,11 @@ video {
     object-fit: cover;
 }
 
+// rgba(17, 17, 17, 0.6);
+
+
 .video__overlay {
-    background: rgba(10,10,10,0.6);
+    background: linear-gradient(141deg, rgba(106, 91, 204, 0.6) 0%, rgba(63, 119, 223, 0.6) 51%, rgba(70, 178, 218, 0.6) 75%);
     color: white;
     top: 0;
     bottom: 0;
@@ -25,15 +28,22 @@ video {
         padding-top: 10em;
     }
     h1 {
-        font-size: 6em;
+        font-size: 4em;
         margin: 0;
+        margin-top: 100px;
         padding-top: .5em;
         padding-bottom: 0;
     }
     p {
-        font-size: 2em;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.8em;
         margin: 0 0;
         padding: 0 2em;
+        // margin-bottom: 250px;
+    }
+    button {
+        margin-top: 60px;
+        margin-bottom: 150px;
     }
 }
 

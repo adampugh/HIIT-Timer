@@ -1,0 +1,26 @@
+.social-links {
+    span {
+        width: 40px;
+        height: 40px;
+        padding: 20px;
+        border: 1px solid white;
+        border-radius: 50%;
+        margin: 0 6px;
+        -webkit-transition: background-color .5s ease-out;
+        -moz-transition: background-color .5s ease-out;
+        -o-transition: background-color .5s ease-out;
+        transition: background-color .5s ease-out;
+        &:hover {
+            background: white;
+            color: rgb(146, 135, 216);
+            cursor: pointer;
+        }
+    }
+
+    .twitter {
+        padding: 20px 22.2px;
+    }
+    .youtube {
+        padding: 20px 22px;
+    }
+}

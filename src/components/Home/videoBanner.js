@@ -3,7 +3,7 @@ import React from "react";
 import workoutPicture from "../../assets/photos/Workout.jpg";
 import videoMP4 from "../../assets/videos/Workout.mp4";
 import videoWebM from "../../assets/videos/Workout.webm";
-
+import SocialLinks from "../UI/socialLinks";
 
 const videoBanner = () => {
     return (
@@ -12,8 +12,9 @@ const videoBanner = () => {
             <div className="video__container">
                 <div className="video__overlay">
                     <h1>HIIT Timer</h1>
-                    <p>Sign up to our weekly publication.</p>
+                    <p>Create awesome workouts and get in shape!</p>
                     <button className="btn">Log In</button>
+                    <SocialLinks />
                 </div>
                 <video poster={workoutPicture} autoPlay muted loop playsInline>
                     <source src={videoMP4} type="video/mp4" /> 

@@ -1,6 +1,12 @@
 @import "./base/settings";
+@import "./base/mixins";
 
 @import "./components/Home/videoBanner";
-
+@import "./components/Home/bannerText";
+@import "./components/Home/phoneBanner";
+@import "./components/Home/panels";
 
 @import "./components/UI/navbar";
+@import "./components/UI/btn";
+@import "./components/UI/socialLinks";
+@import "./components/UI/footer";
