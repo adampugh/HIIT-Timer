@@ -1,6 +1,7 @@
 .workoutsBlock {
     // display: grid;
     // grid-template-rows: 1fr 1fr 1fr;
+    margin: 0 auto;
     text-align: center;
     justify-self: center;
     align-self: center;
@@ -9,7 +10,6 @@
     border-radius: 20px;
     color: white;
     height: 200px;
-    margin-bottom: 80px;
     padding: 40px;
     width: 200px;
     cursor: pointer;
@@ -21,6 +21,15 @@
         height: 100px;
         margin: 0;
     }
+}
+
+.workoutsBlock__edit {
+    // display: flex;
+    // justify-content: space-between;
+    text-align: center;
+    color: grey;
+    margin: 0 auto 80px auto;
+    width: 250px;
 }
 
 @media only screen and (min-width: $desktop-breakpoint) {
