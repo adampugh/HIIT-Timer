@@ -1,16 +1,20 @@
 .bannerText {
     background: $light-grey;
-    padding: 130px 0;
+    padding: 110px 0;
     text-align: center;
     color: rgb(179, 179, 179);
 }
-
 
 .bannerText__container {
     width: 90%;
     margin: 0 auto;
 }
-  
+
+.bannerText__image {
+    height: 100px;
+    padding-top: 60px;
+}
+
 @media (min-width: $desktop-breakpoint) {
     .bannerText__container {
       width: 54%;

@@ -13,8 +13,8 @@ const workoutsGrid = (props) => (
                         totalTime={workout.totalTime}/>
                 )}
                 <div className="workouts__addBlock">
-                    <h1>+</h1>
-                    <h3>Create a workout</h3>
+                    <h1>Create a workout</h1>
+                    <i className="fas fa-plus-circle"></i>
                 </div>
             </div>
         </div>
