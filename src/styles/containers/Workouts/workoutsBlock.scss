@@ -1,0 +1,17 @@
+.workoutsBlock {
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    border: 5px solid white;
+    background: $purple-gradient;
+    border-radius: 20px;
+    color: white;
+    height: 200px;
+    margin-bottom: 80px;
+    padding: 40px;
+    width: 200px;
+    @include boxshadow;
+    i, svg {
+        font-size: 40px;
+    }
+}

@@ -1,0 +1,27 @@
+.workouts__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.workouts__wrapper {
+    background: $light-grey;
+}
+
+
+.workouts__addBlock {
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    border: 5px dashed grey;
+    border-radius: 20px;
+    margin-bottom: 80px;
+    padding: 40px;
+    width: 200px;
+    height: 200px;
+}
+
+@media only screen and (min-width: $desktop-breakpoint) {
+    .workouts__grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
