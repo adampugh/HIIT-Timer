@@ -1,3 +1,7 @@
-.loginModal {
-    z-index: 2000;
+.loginModal__close {
+    text-align: right;
+    color: grey;
+    svg, i {
+        cursor: pointer;
+    }
 }

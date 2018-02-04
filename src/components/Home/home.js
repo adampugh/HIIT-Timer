@@ -19,12 +19,19 @@ class Home extends Component {
         });
     }
 
+    closeModal = () => {
+        this.setState({
+            modalOpen: false
+        });
+    }
+
     render() {
         return (
             <div>
                 <Navbar 
                     handleOpenModal={this.openModal} 
-                    modalOpen={this.state.modalOpen} />
+                    modalOpen={this.state.modalOpen}
+                    handleCloseModal={this.closeModal} />
                 <VideoBanner 
                     handleOpenModal={this.openModal} />
                 <TextBanner />

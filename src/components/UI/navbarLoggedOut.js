@@ -4,7 +4,9 @@ import LoginModal from "./loginModal";
 
 const navbarLoggedOut = (props) => (
     <div>
-        <LoginModal isOpen={props.modalOpen}/>
+        <LoginModal 
+            isOpen={props.modalOpen} 
+            handleCloseModal={props.handleCloseModal} />
         <nav className="navbar navbar--loggedOut">
             <div className="container">
                 <div className="navbar__items">
