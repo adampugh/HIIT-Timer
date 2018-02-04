@@ -1,5 +1,6 @@
-import React from "react";
-import Navbar from "../UI/navbar";
+import React, { Component } from "react";
+// import Navbar from "../UI/navbar";
+import Navbar from "../UI/navbarLoggedOut";
 import VideoBanner from "./videoBanner";
 import TextBanner from "./bannerText";
 import PhoneBanner from "./phoneBanner";
@@ -7,15 +8,33 @@ import Panels from "./panels";
 import Footer from "../UI/footer";
 
 
-const home = () => (
-    <div>
-        <Navbar links={["Sign Up", "Log In"]} classes={"navbar--loggedOut"} />
-        <VideoBanner />
-        <TextBanner />
-        <PhoneBanner />
-        <Panels />
-        <Footer />
-    </div>
-);
+class Home extends Component {
+    state = {
+        modalOpen: false
+    }
 
-export default home;
+    openModal = () => {
+        this.setState({
+            modalOpen: true
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <Navbar 
+                    handleOpenModal={this.openModal} 
+                    modalOpen={this.state.modalOpen} />
+                <VideoBanner 
+                    handleOpenModal={this.openModal} />
+                <TextBanner />
+                <PhoneBanner 
+                    handleOpenModal={this.openModal} />
+                <Panels />
+                <Footer />
+            </div>
+        )
+    }
+} 
+
+export default Home;

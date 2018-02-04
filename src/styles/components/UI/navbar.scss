@@ -1,13 +1,14 @@
 .navbar {
     z-index: 1000;
     width: 100%;
+    color: white;
     h2 {
-        color: white;
         display: inline;
     }
 }
 
 .navbar--loggedOut {
+
     position: absolute;
     background: transparent;
 }
