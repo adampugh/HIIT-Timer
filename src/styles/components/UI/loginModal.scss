@@ -5,3 +5,24 @@
         cursor: pointer;
     }
 }
+
+.ReactModalPortal > div {
+    opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    transition: opacity 200ms ease-in-out;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+
+// .modal {
+//     background: #f1f1f1;
+//     z-index: 2000;
+// }
