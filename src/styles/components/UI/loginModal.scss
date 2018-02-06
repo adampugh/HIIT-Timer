@@ -1,6 +1,13 @@
+.loginHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 .loginModal__close {
+    display: inline;
     text-align: right;
     color: grey;
+    justify-items: end;
     svg, i {
         cursor: pointer;
     }
@@ -21,8 +28,48 @@
     opacity: 1;
 }
 
+.ReactModalPortal .ReactModal__Overlay--before-close {
+    opacity: 0;
+}
 
-// .modal {
-//     background: #f1f1f1;
-//     z-index: 2000;
-// }
+.modal {
+    background: #f1f1f1;
+    border-radius: 20px;
+    z-index: 2000;
+    max-width: 30rem;
+    min-width: 20rem;
+    min-height: 20rem;
+    outline: none;
+    padding: 30px;
+    text-align: center;
+    h3 {
+        display: inline;
+    }
+    hr {
+        width: 80%;
+        margin-bottom: 40px;
+        color: lightgrey;
+        background: lightgrey;
+        border: 1px solid lightgrey;
+        margin-top: 10px;
+    }
+}
+
+.loginModal__button {
+    background: white;
+    color: grey;
+    display: block;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2em;
+    padding: 20px;
+    width: 100%;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+    @include boxshadow;
+    span {
+        padding-left: 20px;
+        vertical-align: top;
+        line-height: 50px;
+    }
+}
