@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Navbar from "../../components/UI/navbar";
+import Navbar from "../../components/UI/navbarLoggedIn";
 import WorkoutsBanner from "./workoutsbanner";
 import WorkoutsGrid from "./workoutsGrid";
 import Footer from "../../components/UI/footer";
@@ -19,15 +19,32 @@ class Workouts extends Component {
                 totalTime: "30 minutes",
                 exercises: []
             }
-        ]
+        ],
+        modalOpen: false
+    }
+
+    openModal = () => {
+        this.setState({
+            modalOpen: true
+        });
+    }
+
+    closeModal = () => {
+        this.setState({
+            modalOpen: false
+        });
     }
 
     render() {
         return (
             <div>
-                <Navbar links={["Workouts", "Log Out"]} classes={"navbar--loggedIn"}/>
+                <Navbar />
                 <WorkoutsBanner />
-                <WorkoutsGrid workouts={this.state.workouts} />
+                <WorkoutsGrid 
+                    workouts={this.state.workouts} 
+                    isOpen={this.state.modalOpen}
+                    handleOpenModal={this.openModal}
+                    handleCloseModal={this.closeModal} />
                 <Footer />
             </div>
         );

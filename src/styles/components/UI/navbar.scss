@@ -5,6 +5,9 @@
     h2 {
         display: inline;
     }
+    h2, h3 {
+        cursor: pointer;
+    }
 }
 
 .navbar--loggedOut {
@@ -30,6 +33,10 @@
         color: white;
         padding-left: 15px;
         text-decoration: none;   
+        cursor: pointer;
+    }
+    h3 {
+        display: inline-block;
     }
 }
 

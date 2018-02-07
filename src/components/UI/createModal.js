@@ -1,25 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Modal from "react-modal";
-
-import GoogleIcon from "../../assets/photos/googlelogo.jpg";
-import FacebookIcon from "../../assets/photos/facebooklogo.jpg";
 
 const customStyles = {
     overlay : {
         zIndex: 2000,
-        // display: 'flex',
-        // alignItems: "center",
-        // justifyContent: "center"
         background: "rgba(0, 0, 0, 0.6)"
       },
       content : {
       }
 }
 
-const loginModal = (props) => (
+const createModal = (props) => (
     <Modal 
         isOpen={props.isOpen}
-        contentLabel="login modal"
+        contentLabel="create workout modal"
         appElement={document.getElementById('root')} 
         onRequestClose={props.handleCloseModal}
         style={customStyles}
@@ -29,7 +24,7 @@ const loginModal = (props) => (
         <div className="modal__box">
             <div className="modal__header">
                 <div></div>
-                <div><h3>Log In</h3></div>
+                <div><h3>Create Workout</h3></div>
                 <div className="modal__close">
                     <h3>
                         <span onClick={props.handleCloseModal}>
@@ -39,17 +34,19 @@ const loginModal = (props) => (
                 </div>
             </div>
             <hr />
-
-            <button className="modal__login-button">
-                <img src={GoogleIcon} alt="google logo" />
-                <span>Sign in with Google</span>
-            </button>
-            <button className="modal__login-button">
-                <img src={FacebookIcon} alt="facebook logo" />
-                <span>Sign in with Facebook</span>
-            </button>
+            <div className="modal--create">
+                <label>Name</label>
+                <input type="text" />
+                <Link to="/" >
+                    <button className="modal__button">Create Workout</button>
+                </Link>
+            </div>
         </div>
+        
     </Modal>
 );
 
-export default loginModal;
+export default createModal;
+
+
+
