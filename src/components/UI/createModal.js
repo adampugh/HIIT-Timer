@@ -42,7 +42,6 @@ const createModal = (props) => (
                 </Link>
             </div>
         </div>
-        
     </Modal>
 );
 
