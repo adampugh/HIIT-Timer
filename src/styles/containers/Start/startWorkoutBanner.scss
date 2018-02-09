@@ -1,0 +1,32 @@
+.startWorkoutBanner {
+    text-align: center;
+    color: white;
+    background: $purple-gradient;
+    height: 90vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 60px;
+    h1 {
+        margin: 0;
+        padding: 40px;
+        font-size: 4em;
+    }
+}
+
+.startWorkoutBanner__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    padding: 40px 0;
+    div {
+        border: 1px solid white;    
+    }
+}
+
+@media only screen and (min-width: $desktop-breakpoint) {
+    .startWorkoutBanner {
+       height: 80vh;
+    }
+}
