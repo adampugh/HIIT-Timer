@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import WorkoutsBlock from "./workoutsBlock";
 import CreateModal from "../../components/UI/createModal";
 
+
+
+
+
 const workoutsGrid = (props) => (
     <div>
         <CreateModal 
