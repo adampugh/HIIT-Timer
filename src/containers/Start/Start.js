@@ -18,7 +18,7 @@ class Start extends Component {
         workout: [
             {
                 name: "Crunches",
-                time: 120
+                time: 10
             },
             {
                 name: "Break",
