@@ -74,8 +74,12 @@ class startWorkoutBanner extends Component {
     // format seconds as minutes in the render function
 
     render() {
+        let customColor = {
+            backgroundColor: this.props.workout[this.state.position].color
+        }
+
         return (
-            <div className="startWorkoutBanner" onClick={this.handleBannerClick}>
+            <div className="startWorkoutBanner" onClick={this.handleBannerClick} style={customColor}>
                 <h1>{this.state.currentName}</h1>
                 <h1>{this.state.currentTime}</h1>
                 <div className="startWorkoutBanner__grid">
