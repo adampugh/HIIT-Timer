@@ -45,7 +45,8 @@ class startWorkoutBanner extends Component {
         const interval = setInterval(() => {
             if (this.state.currentTime > 0 && !this.state.paused) {
                 this.setState({
-                    currentTime: this.state.currentTime - 1
+                    currentTime: this.state.currentTime - 1,
+                    totalTime: this.state.totalTime + 1
                 });
             } else if (this.state.paused) {
                 clearInterval(interval);
