@@ -11,9 +11,13 @@ class startWorkoutBanner extends Component {
     
     // startTimer - get time from workout / if 0 increase position / add to total time
     startTimer = () => {
+        if (this.state.currentTime === 0) {
+            this.setState({
+                currentTime: this.props.workout[this.state.position].time,
+            });
+        }
         this.setState({
             currentName: this.props.workout[this.state.position].name,
-            currentTime: this.props.workout[this.state.position].time,
             paused: false
         });
         this.startExercise();
@@ -22,15 +26,6 @@ class startWorkoutBanner extends Component {
     // display number of seconds left
     startExercise(exerciseTime) {
         this.exerciseInterval();
-            // setInterval(() => {
-            //     if (this.state.currentTime > 0) {
-            //         this.setState({
-            //             currentTime: this.state.currentTime - 1
-            //         });
-            //     } else {
-            //         clearInterval();
-            //     }
-            // }, 1000);
     }
 
     nextExercise() {
@@ -45,39 +40,41 @@ class startWorkoutBanner extends Component {
             })
         }
     }
-
-    // startExercise(exerciseTime) {
-        
-    //     if (this.state.currentTime > 0) {
-    //         this.exerciseInterval();
-    //     }
-    //     this.setState({
-    //         position: this.state.position + 1
-    //     })
-    // }
     
-    exerciseInterval() {
+    exerciseInterval() { 
         const interval = setInterval(() => {
-            if (this.state.currentTime > 0) {
-                    this.setState({
-                        currentTime: this.state.currentTime - 1
-                    });
-                } else {
-                    clearInterval(interval);
-                    this.nextExercise();
-                }
+            if (this.state.currentTime > 0 && !this.state.paused) {
+                this.setState({
+                    currentTime: this.state.currentTime - 1
+                });
+            } else if (this.state.paused) {
+                clearInterval(interval);
+            } else {
+                clearInterval(interval);
+                this.nextExercise();
+            }
         }, 1000);
     }
 
-    // pauseTimer - save current time ready to resume - each exercise is self contained
+    stopTimer() {
+        this.setState({
+            paused: true
+        });
+    }
 
+    handleBannerClick = () => {
+        if (this.state.paused === true) {
+            this.startTimer();
+        } else {
+            this.stopTimer();
+        }
+    }
 
     // format seconds as minutes in the render function
 
     render() {
-
         return (
-            <div className="startWorkoutBanner" onClick={this.startTimer}>
+            <div className="startWorkoutBanner" onClick={this.handleBannerClick}>
                 <h1>{this.state.currentName}</h1>
                 <h1>{this.state.currentTime}</h1>
                 <div className="startWorkoutBanner__grid">
@@ -87,8 +84,6 @@ class startWorkoutBanner extends Component {
                     </div>
                     <div>
                         <h3>{this.state.paused ? "Play" : "Pause"}</h3>
-                        <h2>{this.state.paused ? <span><i className="fas fa-play"></i></span>
-                            : <i className="fas fa-pause"></i> }</h2>
                     </div>
                     <div>
                         <h3>Total Time</h3>
@@ -99,5 +94,11 @@ class startWorkoutBanner extends Component {
         );
     }
 };
+
+
+
+// <h2>{this.state.paused ? <span><i className="fas fa-play"></i></span>
+//     : <span><i className="fas fa-pause"></i></span> }</h2>
+
 
 export default startWorkoutBanner;
