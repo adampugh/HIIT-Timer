@@ -75,7 +75,7 @@ class startWorkoutBanner extends Component {
 
     render() {
         let customColor = {
-            backgroundColor: this.props.workout[this.state.position].color
+            backgroundColor: this.props.workout[this.state.position].color || "$purple-gradient"
         }
 
         return (
