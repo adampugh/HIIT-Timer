@@ -74,9 +74,13 @@ class startWorkoutBanner extends Component {
     // format seconds as minutes in the render function
 
     render() {
-        let customColor = {
-            background: this.props.workout[this.state.position].color || "$purple-gradient"
+        let customColor;
+        if (this.props.workout[this.state.position]) {
+            customColor = {
+                background: this.props.workout[this.state.position].color
+            }
         }
+        
 
         return (
             <div className="startWorkoutBanner" onClick={this.handleBannerClick} style={customColor}>

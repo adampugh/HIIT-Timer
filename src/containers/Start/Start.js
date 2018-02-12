@@ -18,22 +18,22 @@ class Start extends Component {
         workout: [
             {
                 name: "Crunches",
-                time: 10,
+                time: 1,
                 color: "$purple-gradient"
             },
             {
                 name: "Break",
-                time: 30,
+                time: 1,
                 color: "grey"
             },
             {
                 name: "Squats",
-                time: 120,
+                time: 1,
                 color: "red"
             },
             {
                 name: "Break",
-                time: 30,
+                time: 1,
                 color: "purple"
             }
         
