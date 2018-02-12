@@ -19,7 +19,7 @@ class Start extends Component {
             {
                 name: "Crunches",
                 time: 1,
-                color: "$purple-gradient"
+                color: "linear-gradient(141deg, rgba(101, 241, 238, 0.6) 0%, rgba(67, 254, 192, 0.6) 51%, rgba(67, 254, 192, 0.6) 75%)"
             },
             {
                 name: "Break",

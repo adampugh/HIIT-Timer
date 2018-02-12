@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+var moment = require("moment");
+var momentDurationFormatSetup = require("moment-duration-format");
+
 
 class startWorkoutBanner extends Component {
     state = {
@@ -85,7 +88,7 @@ class startWorkoutBanner extends Component {
         return (
             <div className="startWorkoutBanner" onClick={this.handleBannerClick} style={customColor}>
                 <h1>{this.state.currentName}</h1>
-                <h1>{this.state.currentTime}</h1>
+                <h1>{moment.duration(this.state.currentTime, "seconds").format("mm:ss")}</h1>
                 <div className="startWorkoutBanner__grid">
                     <div>
                         <h3>Position</h3>
@@ -93,10 +96,11 @@ class startWorkoutBanner extends Component {
                     </div>
                     <div>
                         <h3>{this.state.paused ? "Play" : "Pause"}</h3>
+                        <h3>{this.state.paused ? '▶' : "▌▌"}</h3>
                     </div>
                     <div>
                         <h3>Total Time</h3>
-                        <h2>{this.state.totalTime}</h2>
+                        <h2>{moment.duration(this.state.totalTime, "seconds").format("mm:ss")}</h2>
                     </div>
                 </div>
             </div>
@@ -105,6 +109,8 @@ class startWorkoutBanner extends Component {
 };
 
 
+
+// '▷' : '❘ ❘'
 
 // <h2>{this.state.paused ? <span><i className="fas fa-play"></i></span>
 //     : <span><i className="fas fa-pause"></i></span> }</h2>
