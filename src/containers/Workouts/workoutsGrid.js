@@ -18,13 +18,13 @@ const workoutsGrid = (props) => (
                 <div className="workouts__grid">
                     {props.workouts.map(workout =>
                         <div key={workout.title}> 
-                            <Link to={`/workouts/${workout.title}/start`}>
+                            <Link to={`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/start`}>
                                 <WorkoutsBlock 
                                     title={workout.title}
                                     totalTime={workout.totalTime} />
                             </Link>
                             <div className="workoutsBlock__edit">
-                                <Link to={`/workouts/${workout.title}`}>
+                                <Link to={`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`}>
                                     <h3><i className="far fa-edit"></i> Edit</h3>
                                 </Link>
                                 <h3><i className="far fa-trash-alt"></i> Delete</h3>

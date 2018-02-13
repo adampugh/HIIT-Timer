@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import homePage from './components/Home/home';
 import workoutsPage from "./containers/Workouts/Workouts";
 import startPage from "./containers/Start/Start";
-
+import editPage from "./containers/Edit/Edit";
 
 // <Route path="/workouts" component={workoutsPage} />
 // <Route path="/create" component={createPage} />
@@ -16,6 +16,7 @@ class App extends Component {
       <Switch>
         <Route path="/workouts" exact component={workoutsPage} />  
         <Route path="/workouts/:id/start" component={startPage} />
+        <Route path="/workouts/:id/edit" component={editPage} />
         <Route path="/" exact component={homePage} />
         <Redirect to="/" />
       </Switch>

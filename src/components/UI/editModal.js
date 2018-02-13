@@ -9,23 +9,13 @@ const customStyles = {
       }
 }
 
-class createModal extends Component { 
-    state = {
-        workoutUrl: ""
-    }
-
-    updateUrl = (e) => {
-        this.setState({
-            workoutUrl: e.target.value
-        });
-    }
-
+class editModal extends Component { 
     render() {
 
         return (
             <Modal 
             isOpen={this.props.isOpen}
-            contentLabel="create workout modal"
+            contentLabel="add exercise modal"
             appElement={document.getElementById('root')} 
             onRequestClose={this.props.handleCloseModal}
             style={customStyles}
@@ -35,7 +25,7 @@ class createModal extends Component {
             <div className="modal__box">
                 <div className="modal__header">
                     <div></div>
-                    <div><h3>Create Workout</h3></div>
+                    <div><h3>Add Exercise</h3></div>
                     <div className="modal__close">
                         <h3>
                             <span onClick={this.props.handleCloseModal}>
@@ -47,10 +37,8 @@ class createModal extends Component {
                 <hr />
                 <div className="modal--create">
                     <label>Name</label>
-                    <input type="text" maxLength="20" onChange={(e) => this.updateUrl(e)}/>
-                    <Link to={`/workouts/${this.state.workoutUrl.split(" ").join("-").toLowerCase()}/edit`} >
-                        <button disabled={this.state.workoutUrl.length < 1} className="modal__button">Create Workout</button>
-                    </Link>
+                    <input type="text" maxLength="20" />
+                    <button disabled={false} className="modal__button">Create Workout</button>
                 </div>
             </div>
         </Modal>
@@ -59,7 +47,4 @@ class createModal extends Component {
 }    
 
 
-export default createModal;
-
-
-
+export default editModal;
