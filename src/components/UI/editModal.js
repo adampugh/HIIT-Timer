@@ -10,8 +10,11 @@ const customStyles = {
 }
 
 class editModal extends Component { 
-    render() {
 
+
+
+    
+    render() {
         return (
             <Modal 
             isOpen={this.props.isOpen}

@@ -1,6 +1,4 @@
 .workoutsBlock {
-    // display: grid;
-    // grid-template-rows: 1fr 1fr 1fr;
     margin: 0 auto;
     text-align: center;
     justify-self: center;
@@ -11,7 +9,7 @@
     color: white;
     height: 200px;
     padding: 40px;
-    width: 200px;
+    max-width: 200px;
     cursor: pointer;
     @include boxshadow;
     i, svg {
