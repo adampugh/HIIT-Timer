@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Modal from "react-modal";
 
 const customStyles = {
@@ -10,11 +9,36 @@ const customStyles = {
 }
 
 class editModal extends Component { 
+    state = {
+        exercise: {
+            name: "sdfsdf",
+            time: 10,
+            color: "red"
+        },
+        break: {
+            name: "",
+            time: 0,
+            color: "grey"
+        },
+        breakIncluded: true,
+        formError: true
+    }
+
+    checkValidity = () => {
+        let isValid = true;
+        if (this.state.exercise.name.length > 0 
+            && this.state.exercise.time > 0 
+            && this.state.exercise.color !== "") {
+            this.setState({
+                formError: false
+            });
+        }
+    }
 
 
 
-    
     render() {
+
         return (
             <Modal 
             isOpen={this.props.isOpen}
@@ -41,7 +65,7 @@ class editModal extends Component {
                 <div className="modal--create">
                     <label>Name</label>
                     <input type="text" maxLength="20" />
-                    <button disabled={false} className="modal__button">Create Workout</button>
+                    <button disabled={this.state.formError} className="modal__button">Create Workout</button>
                 </div>
             </div>
         </Modal>
