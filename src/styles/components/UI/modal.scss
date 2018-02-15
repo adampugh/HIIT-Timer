@@ -56,6 +56,19 @@
     }
 }
 
+.modal--edit {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.modal--edit::-webkit-scrollbar-track {
+    margin: 12px 0;
+    background: none;
+    box-sizing: border-box;
+  }
+
+
+
 .modal__login-button {
     background: white;
     color: grey;
@@ -67,7 +80,7 @@
     width: 100%;
     margin: 10px 0 10px 0;
     cursor: pointer;
-    @include boxshadow;
+    // @include boxshadow;
     span {
         padding-left: 20px;
         vertical-align: top;
@@ -103,9 +116,49 @@
     width: 100%;
     margin: 10px 0 10px 0;
     cursor: pointer;
-    @include boxshadow;
+    // @include boxshadow;
     &:disabled {
         background: lightgrey;
         box-shadow: none;
     }
 }
+
+
+.modal--edit {
+    // height: 100%;
+    // overflow: auto;
+    label {
+        display: block;
+        text-align: left;
+        padding: 10px 0;
+    }
+    input {
+        box-sizing: border-box;
+        font-size: 1em;
+        width: 100%;
+        padding: 15px;
+        border-radius: 10px;
+        border: none;
+        margin-bottom: 20px;
+    }
+    .modal--edit__numberInput1 {
+        width: 45%;
+        margin-right: 5%;
+    }
+    .modal--edit__numberInput2 {
+        width: 45%;
+        margin-left: 5%;
+    }
+    .modal--edit__breakInclude {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .modal--edit__checkbox {
+        width: 10%;
+        margin: 10px 0 10px 10%;
+    }
+}
+
+

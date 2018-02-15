@@ -25,7 +25,7 @@ const editGrid = (props) => (
                         </div>
                     )}
                     <div onClick={props.handleOpenModal} className="edit__addBlock">
-                        <h1>Create a workout</h1>
+                        <h1>Add an Exercise</h1>
                         <i className="fas fa-plus-circle"></i>
                     </div>
                 </div>
