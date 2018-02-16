@@ -43,7 +43,14 @@ const editModal = (props) => (
                     
                     <Field className="modal--edit__numberInput2" type="number" max="59" name="exerciseSeconds" />
                     <label>Color</label>
-                    <Field type="text" name="exerciseColor" />
+                    <Field component="select" name="exerciseColor">
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                    </Field>
                     <div className="modal--edit__breakInclude">
                         <div>
                         <label className="modal--edit__breakLabel">Break</label></div>
