@@ -57,19 +57,36 @@ const editModal = (props) => (
                             </Field>
                         </div>
                     </div>
-                    <div className="modal--edit__breakInclude">
+                    
                         <div>
-                        <label className="modal--edit__breakLabel">Break</label></div>
-                        <div>
-                        <Field className="modal--edit__checkbox" type="checkbox" name="breakIncluded" checked={props.values.breakIncluded} />
+                            <label className="modal--edit__breakLabel">Break</label>
                         </div>
-                    </div>
+                        <div className="modal--edit__checkboxDiv">
+                            <Field id="switch" className="modal--edit__checkbox" type="checkbox" name="breakIncluded" checked={props.values.breakIncluded} />
+                            <label for="switch">Toggle</label>
+                        </div>
+                    
                     { props.values.breakIncluded &&
-                        <div>
-                            <label>Time</label>
-                            <Field className="modal--edit__numberInput1" type="number" max="60" name="breakMinutes" />
-                            <Field className="modal--edit__numberInput2" type="number" max="59" name="breakSeconds" />
-                        </div>}
+                        <div className="exerciseGrid">
+                            <div className="exerciseGrid__timeCol">
+                                <label>Time</label>
+                                <Field className="modal--edit__numberInput1" type="number" max="60" name="breakMinutes" />
+                                :
+                                <Field className="modal--edit__numberInput2" type="number" max="59" name="breakSeconds" />
+                            </div>
+                            <div className="exerciseGrid__colorCol">
+                                <label>Color</label>
+                                <Field component="select" name="breakColor" style={{backgroundColor: props.values.breakColor}}>
+                                    <option value="#40b3e1"></option>
+                                    <option value="#acff82"></option>
+                                    <option value="#fedc45"></option>
+                                    <option value="#fec345"></option>
+                                    <option value="#fe6145"></option>
+                                    <option value="#b145fe"></option>
+                                </Field>
+                            </div>
+                        </div>
+                    }
                     <button className="modal__button">Add Exercise</button>
                 </Form>
             </div>
@@ -97,3 +114,12 @@ const formikEditModal = withFormik({
 })(editModal);
 
 export default formikEditModal;
+// <div className="modal--edit__breakInclude">
+// <div>
+//     <label className="modal--edit__breakLabel">Break</label>
+// </div>
+// <div className="modal--edit__checkboxDiv">
+//     <Field id="switch" className="modal--edit__checkbox" type="checkbox" name="breakIncluded" checked={props.values.breakIncluded} />
+//     <label for="switch">Toggle</label>
+// </div>
+// </div>
