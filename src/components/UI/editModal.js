@@ -38,19 +38,25 @@ const editModal = (props) => (
                 <Form>
                     <label>Name</label>
                     <Field type="text" maxLength="20" name="exerciseName" />
-                    <label>Time</label>
-                    <Field className="modal--edit__numberInput1" type="number" max="60" name="exerciseMinutes" />
-                    
-                    <Field className="modal--edit__numberInput2" type="number" max="59" name="exerciseSeconds" />
-                    <label>Color</label>
-                    <Field component="select" name="exerciseColor">
-                        <option value="red">Red</option>
-                        <option value="green">Green</option>
-                        <option value="blue">Blue</option>
-                        <option value="red">Red</option>
-                        <option value="green">Green</option>
-                        <option value="blue">Blue</option>
-                    </Field>
+                    <div className="exerciseGrid">
+                        <div className="exerciseGrid__timeCol">
+                            <label>Time</label>
+                            <Field className="modal--edit__numberInput1" type="number" max="60" name="exerciseMinutes" />
+                            :
+                            <Field className="modal--edit__numberInput2" type="number" max="59" name="exerciseSeconds" />
+                        </div>
+                        <div className="exerciseGrid__colorCol">
+                            <label>Color</label>
+                            <Field component="select" name="exerciseColor" style={{backgroundColor: props.values.exerciseColor}}>
+                                <option value="#40b3e1"></option>
+                                <option value="#acff82"></option>
+                                <option value="#fedc45"></option>
+                                <option value="#fec345"></option>
+                                <option value="#fe6145"></option>
+                                <option value="#b145fe"></option>
+                            </Field>
+                        </div>
+                    </div>
                     <div className="modal--edit__breakInclude">
                         <div>
                         <label className="modal--edit__breakLabel">Break</label></div>

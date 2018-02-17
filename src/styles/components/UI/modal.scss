@@ -140,11 +140,11 @@
         margin-bottom: 20px;
     }
     .modal--edit__numberInput1 {
-        width: 45%;
+        width: 40%;
         margin-right: 5%;
     }
     .modal--edit__numberInput2 {
-        width: 45%;
+        width: 40%;
         margin-left: 5%;
     }
     .modal--edit__breakInclude {
@@ -169,7 +169,38 @@
     }
 }
 
-select option[value="red"] {
-    background: rgba(100, 100, 100, 0.3);
-    color: red;
+.exerciseGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+    .exerciseGrid__timeCol {
+        width: 50%;
+    }
+    .exerciseGrid__colorCol {
+        width: 50%;
+    }
+}
+
+select option[value="#40b3e1"] {
+    background: #40b3e1;
+}
+
+select option[value="#acff82"] {
+    background: #acff82;
+}
+
+select option[value="#fedc45"] {
+    background: #fedc45;
+}
+
+select option[value="#fec345"] {
+    background: #fec345;
+}
+
+select option[value="#fe6145"] {
+    background: #fe6145;
+}
+
+select option[value="#b145fe"] {
+    background: #b145fe;
 }
