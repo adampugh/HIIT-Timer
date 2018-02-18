@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Modal from "react-modal";
 import { withFormik, Field, Form } from "formik";
 import Yup from "yup";
@@ -15,7 +15,7 @@ const timeValues = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", 
                     "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21",
                     "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32",
                     "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43",
-                    "44", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53",
+                    "44", "45", "46", "47", "48", "49", "50", "51", "52", "53",
                     "54", "55", "56", "57", "58", "59"
 ]
 
@@ -32,7 +32,7 @@ const editModal = (props) => (
         <div className="modal__box">
             <div className="modal__header">
                 <div></div>
-                <div><h3>Add Exercise</h3></div>
+                <div><h3 onClick={() => console.log(props.isValid)}>Add Exercise</h3></div>
                 <div className="modal__close">
                     <h3>
                         <span onClick={props.handleCloseModal}>
@@ -44,19 +44,24 @@ const editModal = (props) => (
             <hr />
             <div className="modal--edit">
                 <Form>
+                    
                     <label>Name</label>
                     <Field type="text" maxLength="20" name="exerciseName" />
+                    { props.errors.exerciseName && <p className="modal--edit__error">{props.errors.exerciseName}</p>}
+
                     <div className="exerciseGrid">
                         <div className="exerciseGrid__timeCol">
                             <label>Time</label>
                             <Field component="select" className="modal--edit__numberInput1" type="text" max="59" name="exerciseMinutes">
-                                {timeValues.map(item => <option value={item}>{item}</option>)}
+                                {timeValues.map(item => <option key={`exerciseMin${item}`} value={item}>{item}</option>)}
                             </Field>
                             :
                             <Field component="select" className="modal--edit__numberInput2" type="text" max="59" name="exerciseSeconds">
-                                {timeValues.map(item => <option value={item}>{item}</option>)}
+                                {timeValues.map(item => <option key={`exerciseSec${item}`} value={item}>{item}</option>)}
                             </Field>
                         </div>
+
+
                         <div className="exerciseGrid__colorCol">
                             <label>Color</label>
                             <Field component="select" name="exerciseColor" style={{backgroundColor: props.values.exerciseColor}}>
@@ -70,6 +75,11 @@ const editModal = (props) => (
                         </div>
                     </div>
                     
+                    { props.errors.exerciseMinutes && <p className="modal--edit__error">{props.errors.exerciseMinutes}</p>}
+                    { props.errors.exerciseSeconds && <p className="modal--edit__error">{props.errors.exerciseSeconds}</p>}
+                    { props.errors.exerciseColor && <p className="modal--edit__error">{props.errors.exerciseColor}</p>}
+
+
                         <div>
                             <label className="modal--edit__breakLabel">Break</label>
                         </div>
@@ -83,11 +93,11 @@ const editModal = (props) => (
                             <div className="exerciseGrid__timeCol">
                                 <label>Time</label>
                                 <Field component="select" className="modal--edit__numberInput1" type="text" max="59" name="breakMinutes">
-                                    {timeValues.map(item => <option value={item}>{item}</option>)}
+                                    {timeValues.map(item => <option key={`breakMin${item}`} value={item}>{item}</option>)}
                                 </Field>
                                 :
                                 <Field component="select" className="modal--edit__numberInput2" type="text" max="59" name="breakSeconds">
-                                    {timeValues.map(item => <option value={item}>{item}</option>)}
+                                    {timeValues.map(item => <option key={`breakSec${item}`} value={item}>{item}</option>)}
                                 </Field>
                             </div>
                             <div className="exerciseGrid__colorCol">
@@ -103,7 +113,7 @@ const editModal = (props) => (
                             </div>
                         </div>
                     }
-                    <button className="modal__button">Add Exercise</button>
+                    <button disabled={!props.isValid} className="modal__button">Add Exercise</button>
                 </Form>
             </div>
         </div>
@@ -124,6 +134,17 @@ const formikEditModal = withFormik({
             breakColor: "#b145fe"
         }
     },
+    validationSchema: Yup.object().shape({
+        exerciseName: Yup.string().required("Name is required"),
+        exerciseMinutes: Yup.string().required("Minutes are required"),
+        exerciseSeconds: Yup.string().required("Seconds are required"),
+        exerciseColor: Yup.string().required("Please pick a color"),
+        breakIncluded: Yup.boolean(),
+        breakName: Yup.string(),
+        breakMinutes: Yup.string(),
+        breakSeconds: Yup.string(),
+        breakColor: Yup.string()
+    }),
     handleSubmit(values) {
         console.log(values);
     }

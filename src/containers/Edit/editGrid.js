@@ -12,8 +12,8 @@ const editGrid = (props) => (
         <div className="edit__wrapper">
             <div className="container">
                 <div className="edit__grid">
-                    {props.workout.map(exercise => 
-                        <div>
+                    {props.workout.map((exercise, index) => 
+                        <div key={`${exercise.name}${index}`}>
                             <EditBlock 
                                 name={exercise.name}
                                 time={exercise.time}
