@@ -62,7 +62,7 @@
 }
 
 .modal--edit::-webkit-scrollbar-track {
-    margin: 12px 0;
+    margin: 14px 0;
     background: none;
     box-sizing: border-box;
   }
@@ -140,10 +140,12 @@
         margin-bottom: 20px;
     }
     .modal--edit__numberInput1 {
+        padding: 15px 10px;
         width: 40%;
         margin-right: 5%;
     }
     .modal--edit__numberInput2 {
+        padding: 15px 10px;
         width: 40%;
         margin-left: 5%;
     }
