@@ -6,7 +6,7 @@ import CreateModal from "../../components/UI/createModal";
 
 
 
-
+// add workout delete modal
 
 const workoutsGrid = (props) => (
     <div>

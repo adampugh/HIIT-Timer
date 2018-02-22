@@ -3,6 +3,9 @@ import React from "react";
 import EditBlock from "./editBlock";
 import EditModal from "../../components/UI/editModal";
 
+// add delete exercise modal
+
+
 const editGrid = (props) => (
     <div>
         <EditModal 
