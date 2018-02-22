@@ -10,7 +10,7 @@ const editBlock = (props) => {
     return (
         <div className="editBlock" style={customStyle}>
             <h1>{props.name}</h1>
-            <h1>{moment.duration(props.time, "seconds").format("mm:ss")}</h1>
+            <h1>{props.time > 59 ? moment.duration(props.time, "seconds").format("mm:ss") : props.time + " Seconds"}</h1>
         </div>
     )
 }
