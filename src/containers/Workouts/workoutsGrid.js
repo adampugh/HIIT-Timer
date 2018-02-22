@@ -6,7 +6,9 @@ import CreateModal from "../../components/UI/createModal";
 
 
 
-// add workout delete modal
+// add workout delete modal 
+// within modal dispatch delete workout action 
+// will have to pass id to modal
 
 const workoutsGrid = (props) => (
     <div>

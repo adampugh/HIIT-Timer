@@ -4,6 +4,8 @@ import EditBlock from "./editBlock";
 import EditModal from "../../components/UI/editModal";
 
 // add delete exercise modal
+// within modal dispatch delete exercise action 
+// will have to pass id to modal
 
 
 const editGrid = (props) => (
