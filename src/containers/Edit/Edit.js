@@ -16,7 +16,7 @@ class Edit extends Component {
             },
             {
                 name: "Break",
-                time: 30,
+                time: 60,
                 color: "grey"
             },
             {
@@ -26,7 +26,7 @@ class Edit extends Component {
             },
             {
                 name: "Break",
-                time: 30,
+                time: 60,
                 color: "purple"
             }
         ],

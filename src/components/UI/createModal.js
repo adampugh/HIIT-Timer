@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import Modal from "react-modal";
+
+import * as actions from "../../store/actions/actions";
 
 const customStyles = {
     overlay : {
@@ -18,6 +21,15 @@ class createModal extends Component {
         this.setState({
             workoutUrl: e.target.value
         });
+    }
+
+    handleOnClick = () => {
+        let workout = {
+            title: this.state.workoutUrl,
+            totalTime: 0,
+            exercises: []
+        };
+        this.props.workoutAdded(workout);
     }
 
     render() {
@@ -49,7 +61,7 @@ class createModal extends Component {
                     <label>Name</label>
                     <input type="text" maxLength="20" onChange={(e) => this.updateUrl(e)}/>
                     <Link to={`/workouts/${this.state.workoutUrl.split(" ").join("-").toLowerCase()}/edit`} >
-                        <button disabled={this.state.workoutUrl.length < 1} className="modal__button">Create Workout</button>
+                        <button onClick={this.handleOnClick} disabled={this.state.workoutUrl.length < 1} className="modal__button">Create Workout</button>
                     </Link>
                 </div>
             </div>
@@ -58,8 +70,14 @@ class createModal extends Component {
     }
 }    
 
+const mapDispatchToProps = dispatch => {
+    return {
+        workoutAdded: (workout) => dispatch(actions.addWorkout(workout))
+    }
+}
 
-export default createModal;
+
+export default connect(null, mapDispatchToProps)(createModal);
 
 
 
