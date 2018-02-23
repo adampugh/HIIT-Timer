@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
 
 import Navbar from "../../components/UI/navbarLoggedIn";
 import WorkoutsBanner from "./workoutsbanner";
@@ -8,18 +10,6 @@ import Footer from "../../components/UI/footer";
 
 class Workouts extends Component {
     state = {
-        workouts: [
-            {
-                title: "Leg Workout",
-                totalTime: "20 minutes",
-                exercises: []
-            },
-            {
-                title: "Shoulder Workout",
-                totalTime: "30 minutes",
-                exercises: []
-            }
-        ],
         createModalOpen: false,
         deleteModalOpen: false
     }
@@ -54,7 +44,7 @@ class Workouts extends Component {
                 <Navbar />
                 <WorkoutsBanner />
                 <WorkoutsGrid 
-                    workouts={this.state.workouts} 
+                    workouts={this.props.workouts} 
                     createModalIsOpen={this.state.createModalOpen}
                     handleOpenCreateModal={this.openCreateModal}
                     handleCloseCreateModal={this.closeCreateModal} 
@@ -67,4 +57,11 @@ class Workouts extends Component {
     }
 }
 
-export default Workouts;
+const mapStateToProps = state => {
+    return {
+        workouts: state.workouts
+    }
+}
+
+
+export default connect(mapStateToProps)(Workouts);

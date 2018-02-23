@@ -2,6 +2,7 @@ import React from "react";
 
 import EditBlock from "./editBlock";
 import EditModal from "../../components/UI/editModal";
+import DeleteModal from "../../components/UI/deleteModal";
 
 // add delete exercise modal
 // within modal dispatch delete exercise action 
@@ -11,8 +12,13 @@ import EditModal from "../../components/UI/editModal";
 const editGrid = (props) => (
     <div>
         <EditModal 
-            isOpen={props.isOpen}
-            handleCloseModal={props.handleCloseModal}
+            isOpen={props.editModalIsOpen}
+            handleCloseModal={props.handleCloseEditModal}
+        />
+        <DeleteModal
+            isOpen={props.deleteModalIsOpen}
+            handleCloseModal={props.handleCloseDeleteModal} 
+            modalTitle="Exercise"
         />
         <div className="edit__wrapper">
             <div className="container">
@@ -25,11 +31,11 @@ const editGrid = (props) => (
                                 color={exercise.color}
                             />
                             <div className="editBlock__delete">
-                                <h3><i className="far fa-trash-alt"></i> Delete</h3>
+                                <h3 onClick={props.handleOpenDeleteModal}><i className="far fa-trash-alt"></i> Delete</h3>
                             </div>
                         </div>
                     )}
-                    <div onClick={props.handleOpenModal} className="edit__addBlock">
+                    <div onClick={props.handleOpenEditModal} className="edit__addBlock">
                         <h1>Add an Exercise</h1>
                         <i className="fas fa-plus-circle"></i>
                     </div>

@@ -8,43 +8,33 @@ import Footer from "../../components/UI/footer";
 
 class Edit extends Component {
     state = {
-        workout: [
-            {
-                name: "Crunches",
-                time: 180,
-                color: "linear-gradient(141deg, rgba(101, 241, 238, 0.6) 0%, rgba(67, 254, 192, 0.6) 51%, rgba(67, 254, 192, 0.6) 75%)"
-            },
-            {
-                name: "Break",
-                time: 30,
-                color: "grey"
-            },
-            {
-                name: "Squats",
-                time: 180,
-                color: "red"
-            },
-            {
-                name: "Break",
-                time: 30,
-                color: "purple"
-            }
-        ],
-        modalOpen: false
+        editModalOpen: false,
+        deleteModalOpen: false
     }
 
-    openModal = () => {
+    openEditModal = () => {
         this.setState({
-            modalOpen: true
+            editModalOpen: true
         });
     }
 
-    closeModal = () => {
+    closeEditModal = () => {
         this.setState({
-            modalOpen: false
+            editModalOpen: false
         });
     }
 
+    openDeleteModal = () => {
+        this.setState({
+            deleteModalOpen: true
+        });
+    }
+
+    closeDeleteModal = () => {
+        this.setState({
+            deleteModalOpen: false
+        });
+    }
 
 
     render() {
@@ -53,10 +43,13 @@ class Edit extends Component {
                 <Navbar />
                 <EditBanner />
                 <EditGrid 
-                    workout={this.state.workout}
-                    isOpen={this.state.modalOpen}
-                    handleOpenModal={this.openModal}
-                    handleCloseModal={this.closeModal}
+                    workout={this.props.location.state.workout}
+                    editModalIsOpen={this.state.editModalOpen}
+                    handleOpenEditModal={this.openEditModal}
+                    handleCloseEditModal={this.closeEditModal}
+                    deleteModalIsOpen={this.state.deleteModalOpen}
+                    handleOpenDeleteModal={this.openDeleteModal}
+                    handleCloseDeleteModal={this.closeDeleteModal}
                 />
                 <Footer />
             </div>

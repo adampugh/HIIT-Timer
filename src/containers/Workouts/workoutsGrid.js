@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import WorkoutsBlock from "./workoutsBlock";
 import CreateModal from "../../components/UI/createModal";
-import DeleteModal from "./workoutDeleteModal";
+import DeleteModal from "../../components/UI/deleteModal";
 
 // add workout delete modal 
 // within modal dispatch delete workout action 
@@ -16,19 +16,21 @@ const workoutsGrid = (props) => (
             handleCloseModal={props.handleCloseCreateModal} />
         <DeleteModal
             isOpen={props.deleteModalIsOpen}
-            handleCloseModal={props.handleCloseDeleteModal} />
+            handleCloseModal={props.handleCloseDeleteModal} 
+            modalTitle="Workout"
+            />
         <div className="workouts__wrapper">
             <div className="container">
                 <div className="workouts__grid">
                     {props.workouts.map(workout =>
                         <div key={workout.title}> 
-                            <Link to={`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/start`}>
+                            <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/start`, state: {workout: workout.workout}}}>
                                 <WorkoutsBlock 
                                     title={workout.title}
                                     totalTime={workout.totalTime} />
                             </Link>
                             <div className="workoutsBlock__edit">
-                                <Link to={`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`}>
+                                <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`, state: {workout: workout.workout}}}>
                                     <h3><i className="far fa-edit"></i> Edit</h3>
                                 </Link>
                                 <h3 onClick={props.handleOpenDeleteModal}><i className="far fa-trash-alt"></i> Delete</h3>

@@ -25,7 +25,7 @@ const loginModal = (props) => (
         <div className="modal__box">
             <div className="modal__header">
                 <div></div>
-                <div><h3>Delete Workout</h3></div>
+                <div><h3>Delete {props.modalTitle}</h3></div>
                 <div className="modal__close">
                     <h3>
                         <span onClick={props.handleCloseModal}>
@@ -35,7 +35,7 @@ const loginModal = (props) => (
                 </div>
             </div>
             <hr />
-            <p>Do you want to delete this workout?</p>
+            <p>Do you want to delete this {props.modalTitle.toLowerCase()}?</p>
             <button className="modal__login-button">
 
                 <span>Yes</span>
