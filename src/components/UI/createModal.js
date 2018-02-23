@@ -60,7 +60,7 @@ class createModal extends Component {
                 <div className="modal--create">
                     <label>Name</label>
                     <input type="text" maxLength="20" onChange={(e) => this.updateUrl(e)}/>
-                    <Link to={`/workouts/${this.state.workoutUrl.split(" ").join("-").toLowerCase()}/edit`} >
+                    <Link to={{pathname:`/workouts/${this.state.workoutUrl.split(" ").join("-").toLowerCase()}/edit`, state: {workout: []}}}>
                         <button onClick={this.handleOnClick} disabled={this.state.workoutUrl.length < 1} className="modal__button">Create Workout</button>
                     </Link>
                 </div>
