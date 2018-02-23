@@ -5,7 +5,7 @@ const initialState = {
         {
             title: "Leg Workout",
             totalTime: "20 minutes",
-            workout: [
+            exercises: [
                 {
                     name: "Crunches",
                     time: 180,
@@ -31,7 +31,7 @@ const initialState = {
         {
             title: "Shoulder Workout",
             totalTime: "30 minutes",
-            workout: []
+            exercises: []
         }
     ]
 };

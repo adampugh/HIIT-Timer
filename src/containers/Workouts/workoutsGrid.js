@@ -24,13 +24,13 @@ const workoutsGrid = (props) => (
                 <div className="workouts__grid">
                     {props.workouts.map(workout =>
                         <div key={workout.title}> 
-                            <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/start`, state: {workout: workout.workout}}}>
+                            <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/start`, state: {workout: workout.exercises}}}>
                                 <WorkoutsBlock 
                                     title={workout.title}
                                     totalTime={workout.totalTime} />
                             </Link>
                             <div className="workoutsBlock__edit">
-                                <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`, state: {workout: workout.workout}}}>
+                                <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`, state: {workout: workout.exercises}}}>
                                     <h3><i className="far fa-edit"></i> Edit</h3>
                                 </Link>
                                 <h3 onClick={props.handleOpenDeleteModal}><i className="far fa-trash-alt"></i> Delete</h3>
