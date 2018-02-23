@@ -20,18 +20,31 @@ class Workouts extends Component {
                 exercises: []
             }
         ],
-        modalOpen: false
+        createModalOpen: false,
+        deleteModalOpen: false
     }
 
-    openModal = () => {
+    openCreateModal = () => {
         this.setState({
-            modalOpen: true
+            createModalOpen: true
         });
     }
 
-    closeModal = () => {
+    closeCreateModal = () => {
         this.setState({
-            modalOpen: false
+            createModalOpen: false
+        });
+    }
+
+    openDeleteModal = () => {
+        this.setState({
+            deleteModalOpen: true
+        });
+    }
+
+    closeDeleteModal = () => {
+        this.setState({
+            deleteModalOpen: false
         });
     }
 
@@ -42,9 +55,12 @@ class Workouts extends Component {
                 <WorkoutsBanner />
                 <WorkoutsGrid 
                     workouts={this.state.workouts} 
-                    isOpen={this.state.modalOpen}
-                    handleOpenModal={this.openModal}
-                    handleCloseModal={this.closeModal} />
+                    createModalIsOpen={this.state.createModalOpen}
+                    handleOpenCreateModal={this.openCreateModal}
+                    handleCloseCreateModal={this.closeCreateModal} 
+                    deleteModalIsOpen={this.state.deleteModalOpen}
+                    handleOpenDeleteModal={this.openDeleteModal}
+                    handleCloseDeleteModal={this.closeDeleteModal} />
                 <Footer />
             </div>
         );

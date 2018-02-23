@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 
 import WorkoutsBlock from "./workoutsBlock";
 import CreateModal from "../../components/UI/createModal";
-
-
+import DeleteModal from "./workoutDeleteModal";
 
 // add workout delete modal 
 // within modal dispatch delete workout action 
@@ -13,8 +12,11 @@ import CreateModal from "../../components/UI/createModal";
 const workoutsGrid = (props) => (
     <div>
         <CreateModal 
-            isOpen={props.isOpen}
-            handleCloseModal={props.handleCloseModal} />
+            isOpen={props.createModalIsOpen}
+            handleCloseModal={props.handleCloseCreateModal} />
+        <DeleteModal
+            isOpen={props.deleteModalIsOpen}
+            handleCloseModal={props.handleCloseDeleteModal} />
         <div className="workouts__wrapper">
             <div className="container">
                 <div className="workouts__grid">
@@ -29,11 +31,11 @@ const workoutsGrid = (props) => (
                                 <Link to={`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`}>
                                     <h3><i className="far fa-edit"></i> Edit</h3>
                                 </Link>
-                                <h3><i className="far fa-trash-alt"></i> Delete</h3>
+                                <h3 onClick={props.handleOpenDeleteModal}><i className="far fa-trash-alt"></i> Delete</h3>
                             </div>
                         </div>
                     )}
-                    <div onClick={props.handleOpenModal} className="workouts__addBlock">
+                    <div onClick={props.handleOpenCreateModal} className="workouts__addBlock">
                         <h1>Create a workout</h1>
                         <i className="fas fa-plus-circle"></i>
                     </div>
