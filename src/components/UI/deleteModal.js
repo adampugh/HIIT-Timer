@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
+import { connect } from "react-redux";
 
-
+import * as actions from "../../store/actions/actions";
 
 const customStyles = {
     overlay : {
@@ -12,9 +13,10 @@ const customStyles = {
       }
 }
 
-class loginModal extends Component {
-    handleDelete(index) {
-        console.log(index)
+class deleteModal extends Component {
+    handleDelete(id) {
+        this.props.deleteWorkout(id);
+        this.props.handleCloseModal();
     }
 
 
@@ -43,7 +45,7 @@ class loginModal extends Component {
                     </div>
                     <hr />
                     <p>Do you want to delete this {this.props.modalTitle.toLowerCase()}?</p>
-                    <button className="modal__login-button" onClick={() => this.handleDelete(this.props.selectedWorkoutIndex)} >
+                    <button className="modal__login-button" onClick={() => this.handleDelete(this.props.selectedWorkoutId)} >
                         <span>Yes</span>
                     </button>
                     <button className="modal__login-button" onClick={this.props.handleCloseModal}>
@@ -55,4 +57,10 @@ class loginModal extends Component {
     }
 };
 
-export default loginModal;
+const mapDispatchToProps = dispatch => {
+    return {
+        deleteWorkout: (id) => dispatch(actions.deleteWorkout(id))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(deleteModal);

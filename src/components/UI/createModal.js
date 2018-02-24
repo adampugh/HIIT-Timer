@@ -29,7 +29,7 @@ class createModal extends Component {
             totalTime: 0,
             exercises: []
         };
-        this.props.workoutAdded(workout);
+        this.props.addWorkout(workout);
     }
 
     render() {
@@ -72,7 +72,7 @@ class createModal extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        workoutAdded: (workout) => dispatch(actions.addWorkout(workout))
+        addWorkout: (workout) => dispatch(actions.addWorkout(workout))
     }
 }
 

@@ -14,9 +14,9 @@ class workoutsGrid extends Component {
         selectedWorkoutIndex: null
     }
 
-    handleDeleteModal = (workoutIndex) => {
+    handleDeleteModal = (workoutId) => {
         this.setState({
-            selectedWorkoutIndex: workoutIndex
+            selectedWorkoutId: workoutId
         });
         this.props.handleOpenDeleteModal()
     }
@@ -31,12 +31,12 @@ class workoutsGrid extends Component {
                     isOpen={this.props.deleteModalIsOpen}
                     handleCloseModal={this.props.handleCloseDeleteModal} 
                     modalTitle="Workout"
-                    selectedWorkoutIndex={this.state.selectedWorkoutIndex}
+                    selectedWorkoutId={this.state.selectedWorkoutId}
                     />
                 <div className="workouts__wrapper">
                     <div className="container">
                         <div className="workouts__grid">
-                            {this.props.workouts.map((workout, index) =>
+                            {this.props.workouts.map(workout =>
                                 <div key={workout.title}> 
                                     <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/start`, state: {workout: workout.exercises}}}>
                                         <WorkoutsBlock 
@@ -47,7 +47,7 @@ class workoutsGrid extends Component {
                                         <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`, state: {workout: workout.exercises}}}>
                                             <h3><i className="far fa-edit"></i> Edit</h3>
                                         </Link>
-                                        <h3 onClick={() => this.handleDeleteModal(index)}><i className="far fa-trash-alt"></i> Delete</h3>
+                                        <h3 onClick={() => this.handleDeleteModal(workout.id)}><i className="far fa-trash-alt"></i> Delete</h3>
                                     </div>
                                 </div>
                             )}

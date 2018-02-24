@@ -3,8 +3,9 @@ import * as actionTypes from "../actions/actionTypes";
 const initialState = {
     workouts: [
         {
+            id: "thisid",
             title: "Leg Workout",
-            totalTime: "20 minutes",
+            totalTime: "20",
             exercises: [
                 {
                     name: "Crunches",
@@ -29,8 +30,9 @@ const initialState = {
             ]
         },
         {
+            id: "thatid",
             title: "Shoulder Workout",
-            totalTime: "30 minutes",
+            totalTime: "30",
             exercises: []
         }
     ]
@@ -43,6 +45,16 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 workouts: [...state.workouts, action.workout]
             };
+        case actionTypes.DELETE_WORKOUT:
+            console.log(action.id);
+            return {
+                ...state,
+                workouts: state.workouts.filter((item, index) => {
+                     if (item.id !== action.id) {
+                          return item
+                        }
+                    })
+            }
         default: 
             return state;
     }

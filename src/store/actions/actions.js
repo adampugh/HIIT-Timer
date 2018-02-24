@@ -12,6 +12,12 @@ export const addWorkout = ({title, totalTime, exercises}) => ({
 });
 
 // delete workout
+export const deleteWorkout = (id) => ({
+    type: actionTypes.DELETE_WORKOUT,
+    id
+});
+
+
 
 // add exercise
 
