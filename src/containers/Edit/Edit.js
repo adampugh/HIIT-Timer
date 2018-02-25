@@ -45,6 +45,7 @@ class Edit extends Component {
                 <EditBanner />
                 <EditGrid 
                     workout={this.props.location.state.workout}
+                    workoutId={this.props.location.state.workoutId}
                     editModalIsOpen={this.state.editModalOpen}
                     handleOpenEditModal={this.openEditModal}
                     handleCloseEditModal={this.closeEditModal}

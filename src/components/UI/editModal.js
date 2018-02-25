@@ -2,7 +2,9 @@ import React from "react";
 import Modal from "react-modal";
 import { withFormik, Field, Form } from "formik";
 import Yup from "yup";
+import { connect } from "react-redux";
 
+import * as actions from "../../store/actions/actions";
 
 const customStyles = {
     overlay : {
@@ -61,7 +63,6 @@ const editModal = (props) => (
                             </Field>
                         </div>
 
-
                         <div className="exerciseGrid__colorCol">
                             <label>Color</label>
                             <Field component="select" name="exerciseColor" style={{backgroundColor: props.values.exerciseColor}}>
@@ -78,7 +79,6 @@ const editModal = (props) => (
                     { props.errors.exerciseMinutes && <p className="modal--edit__error">{props.errors.exerciseMinutes}</p>}
                     { props.errors.exerciseSeconds && <p className="modal--edit__error">{props.errors.exerciseSeconds}</p>}
                     { props.errors.exerciseColor && <p className="modal--edit__error">{props.errors.exerciseColor}</p>}
-
 
                         <div>
                             <label className="modal--edit__breakLabel">Break</label>
@@ -145,9 +145,15 @@ const formikEditModal = withFormik({
         breakSeconds: Yup.string(),
         breakColor: Yup.string()
     }),
-    handleSubmit(values) {
-        console.log(values);
+    handleSubmit(values, {props}) {
+        props.addExercise(values, props.workoutId);
     }
 })(editModal);
 
-export default formikEditModal;
+const mapDispatchToProps = dispatch => {
+    return {
+        addExercise: (exercise, workoutId) => dispatch(actions.addExercise(exercise, workoutId))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(formikEditModal);

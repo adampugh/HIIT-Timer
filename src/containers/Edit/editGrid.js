@@ -14,6 +14,7 @@ const editGrid = (props) => (
         <EditModal 
             isOpen={props.editModalIsOpen}
             handleCloseModal={props.handleCloseEditModal}
+            workoutId={props.workoutId}
         />
         <DeleteModal
             isOpen={props.deleteModalIsOpen}

@@ -46,7 +46,6 @@ const reducer = (state = initialState, action) => {
                 workouts: [...state.workouts, action.workout]
             };
         case actionTypes.DELETE_WORKOUT:
-            console.log(action.id);
             return {
                 ...state,
                 workouts: state.workouts.filter((item, index) => {
@@ -54,7 +53,30 @@ const reducer = (state = initialState, action) => {
                           return item
                         }
                     })
+            };
+        case actionTypes.ADD_EXERCISE:
+            if (action.exercise.breakIncluded) {
+                console.log(action.workoutId);
+                // split exercise into break and exercise
+            } else {
+                return {
+                    ...state,
+                    // find workout index and add exercise 
+                    // , action.exercise
+                    // workouts: state.workouts.map(workout => workout.id === action.workoutId ?  : workout)
+                    workouts: state.workouts.map((workout, index) => {
+                        if (workout.id === action.workoutId) {
+                            return {
+                                ...workout,
+                                exercises: [...workout.exercises, action.exercise]
+                            }
+                        } else {
+                            return workout;
+                        }
+                    })
+                }
             }
+            break;
         default: 
             return state;
     }

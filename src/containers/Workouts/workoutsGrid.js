@@ -38,13 +38,13 @@ class workoutsGrid extends Component {
                         <div className="workouts__grid">
                             {this.props.workouts.map(workout =>
                                 <div key={workout.title}> 
-                                    <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/start`, state: {workout: workout.exercises}}}>
+                                    <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/start`, state: {workout: workout.exercises, workoutId: workout.id}}}>
                                         <WorkoutsBlock 
                                             title={workout.title}
                                             totalTime={workout.totalTime} />
                                     </Link>
                                     <div className="workoutsBlock__edit">
-                                        <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`, state: {workout: workout.exercises}}}>
+                                        <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`, state: {workout: workout.exercises, workoutId: workout.id}}}>
                                             <h3><i className="far fa-edit"></i> Edit</h3>
                                         </Link>
                                         <h3 onClick={() => this.handleDeleteModal(workout.id)}><i className="far fa-trash-alt"></i> Delete</h3>

@@ -17,8 +17,26 @@ export const deleteWorkout = (id) => ({
     id
 });
 
-
-
 // add exercise
+export const addExercise = (exercise, workoutId) => {
+    if (exercise.breakIncluded) {
+        return {
+            type: actionTypes.ADD_EXERCISE,
+            exercise,
+            workoutId
+        }
+    } else {
+        return {
+            type: actionTypes.ADD_EXERCISE,
+            exercise: {
+                exerciseName: exercise.exerciseName,
+                exerciseColor: exercise.exerciseColor,
+                exerciseMinutes: exercise.exerciseMinutes,
+                exerciseSeconds: exercise.exerciseSeconds
+            },
+            workoutId
+        }
+    }
+}
 
 // delete exercise
