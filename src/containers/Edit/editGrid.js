@@ -1,49 +1,63 @@
-import React from "react";
+import React, { Component } from "react";
 
 import EditBlock from "./editBlock";
 import EditModal from "../../components/UI/editModal";
-import DeleteModal from "../../components/UI/deleteModal";
+import DeleteExerciseModal from "../../components/UI/deleteExerciseModal";
 
-// add delete exercise modal
-// within modal dispatch delete exercise action 
-// will have to pass id to modal
+class editGrid extends Component {
+    state = {
+        selectedExerciseIndex: null
+    }
+
+    handleDeleteModal = (exerciseIndex) => {
+        // alert(this.props.workoutId);
+        this.setState({
+            selectedExerciseIndex: exerciseIndex
+        });
+        this.props.handleOpenDeleteModal()
+    }
 
 
-const editGrid = (props) => (
-    <div>
-        <EditModal 
-            isOpen={props.editModalIsOpen}
-            handleCloseModal={props.handleCloseEditModal}
-            workoutId={props.workoutId}
-        />
-        <DeleteModal
-            isOpen={props.deleteModalIsOpen}
-            handleCloseModal={props.handleCloseDeleteModal} 
-            modalTitle="Exercise"
-        />
-        <div className="edit__wrapper">
-            <div className="container">
-                <div className="edit__grid">
-                    {props.workout.map((exercise, index) => 
-                        <div key={`${exercise.name}${index}`}>
-                            <EditBlock 
-                                name={exercise.name}
-                                time={exercise.time}
-                                color={exercise.color}
-                            />
-                            <div className="editBlock__delete">
-                                <h3 onClick={props.handleOpenDeleteModal}><i className="far fa-trash-alt"></i> Delete</h3>
+    render() {
+        return (
+            <div>
+                <EditModal 
+                    isOpen={this.props.editModalIsOpen}
+                    handleCloseModal={this.props.handleCloseEditModal}
+                    workoutId={this.props.workoutId}
+                />
+                <DeleteExerciseModal
+                    isOpen={this.props.deleteModalIsOpen}
+                    handleCloseModal={this.props.handleCloseDeleteModal} 
+                    modalTitle="Exercise"
+                    exerciseIndex={this.state.selectedExerciseIndex}
+                    workoutId={this.props.workoutId}
+                />
+                <div className="edit__wrapper">
+                    <div className="container">
+                        <div className="edit__grid">
+                            {this.props.workout.map((exercise, index) => 
+                                <div key={`${exercise.name}${index}`}>
+                                    <EditBlock 
+                                        name={exercise.name}
+                                        time={exercise.time}
+                                        color={exercise.color}
+                                    />
+                                    <div className="editBlock__delete">
+                                        <h3 onClick={() => this.handleDeleteModal(index)}><i className="far fa-trash-alt"></i> Delete</h3>
+                                    </div>
+                                </div>
+                            )}
+                            <div onClick={this.props.handleOpenEditModal} className="edit__addBlock">
+                                <h1>Add an Exercise</h1>
+                                <i className="fas fa-plus-circle"></i>
                             </div>
                         </div>
-                    )}
-                    <div onClick={props.handleOpenEditModal} className="edit__addBlock">
-                        <h1>Add an Exercise</h1>
-                        <i className="fas fa-plus-circle"></i>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-);
+        );
+    }
+}
 
 export default editGrid;

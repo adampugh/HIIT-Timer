@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import Navbar from "../../components/UI/navbarLoggedIn";
 import EditBanner from "./editBanner";
@@ -44,7 +45,7 @@ class Edit extends Component {
                 <Navbar />
                 <EditBanner />
                 <EditGrid 
-                    workout={this.props.location.state.workout}
+                    workout={this.props.workouts[this.props.location.state.workoutIndex].exercises}
                     workoutId={this.props.location.state.workoutId}
                     editModalIsOpen={this.state.editModalOpen}
                     handleOpenEditModal={this.openEditModal}
@@ -59,4 +60,10 @@ class Edit extends Component {
     }
 }
 
-export default Edit;
+const mapStateToProps = state => {
+    return {
+        workouts: state.workouts
+    }
+}
+
+export default connect(mapStateToProps)(Edit);

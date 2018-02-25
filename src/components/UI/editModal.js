@@ -146,7 +146,23 @@ const formikEditModal = withFormik({
         breakColor: Yup.string()
     }),
     handleSubmit(values, {props}) {
-        props.addExercise(values, props.workoutId);
+        let exercise = {
+            name: values.exerciseName,
+            color: values.exerciseColor,
+            time: (values.exerciseMinutes > 0 ? values.exerciseMinutes * 60 : "") + values.exerciseSeconds
+        }
+        if (values.breakIncluded) {
+            let exerciseBreak = {
+                name: values.breakName,
+                color: values.breakColor,
+                time: (values.breakMinutes > 0 ? values.breakMinutes * 60 : "") + values.breakSeconds
+            }
+            props.addExercise(exercise, props.workoutId);
+            props.addExercise(exerciseBreak, props.workoutId);
+        } else {
+            props.addExercise(exercise, props.workoutId);
+        }
+        props.handleCloseModal();
     }
 })(editModal);
 

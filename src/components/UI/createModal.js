@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Modal from "react-modal";
+import uuid from "uuid";
 
 import * as actions from "../../store/actions/actions";
 
@@ -14,7 +15,14 @@ const customStyles = {
 
 class createModal extends Component { 
     state = {
-        workoutUrl: ""
+        workoutUrl: "",
+        workoutId: null
+    }
+
+    componentWillMount() {
+        this.setState({
+            workoutId: uuid()
+        })
     }
 
     updateUrl = (e) => {
@@ -25,6 +33,7 @@ class createModal extends Component {
 
     handleOnClick = () => {
         let workout = {
+            id: this.state.workoutId,
             title: this.state.workoutUrl,
             totalTime: 0,
             exercises: []
@@ -60,8 +69,14 @@ class createModal extends Component {
                 <div className="modal--create">
                     <label>Name</label>
                     <input type="text" maxLength="20" onChange={(e) => this.updateUrl(e)}/>
-                    <Link to={{pathname:`/workouts/${this.state.workoutUrl.split(" ").join("-").toLowerCase()}/edit`, state: {workout: []}}}>
-                        <button onClick={this.handleOnClick} disabled={this.state.workoutUrl.length < 1} className="modal__button">Create Workout</button>
+                    <Link to={{pathname:`/workouts/${this.state.workoutUrl.split(" ").join("-").toLowerCase()}/edit`, 
+                        state: {workout: [], workoutId: this.state.workoutId, workoutIndex: this.props.workoutIndex}}}>
+                        <button 
+                            onClick={this.handleOnClick} 
+                            disabled={this.state.workoutUrl.length < 1} 
+                            className="modal__button">
+                            Create Workout
+                        </button>
                     </Link>
                 </div>
             </div>

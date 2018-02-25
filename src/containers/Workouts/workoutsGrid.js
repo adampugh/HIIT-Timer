@@ -11,7 +11,7 @@ import DeleteModal from "../../components/UI/deleteModal";
 
 class workoutsGrid extends Component {
     state = {
-        selectedWorkoutIndex: null
+        selectedWorkoutId: null
     }
 
     handleDeleteModal = (workoutId) => {
@@ -26,7 +26,8 @@ class workoutsGrid extends Component {
             <div>
                 <CreateModal 
                     isOpen={this.props.createModalIsOpen}
-                    handleCloseModal={this.props.handleCloseCreateModal} />
+                    handleCloseModal={this.props.handleCloseCreateModal} 
+                    workoutIndex={this.props.workouts.length} />
                 <DeleteModal
                     isOpen={this.props.deleteModalIsOpen}
                     handleCloseModal={this.props.handleCloseDeleteModal} 
@@ -36,7 +37,7 @@ class workoutsGrid extends Component {
                 <div className="workouts__wrapper">
                     <div className="container">
                         <div className="workouts__grid">
-                            {this.props.workouts.map(workout =>
+                            {this.props.workouts.map((workout, index) =>
                                 <div key={workout.title}> 
                                     <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/start`, state: {workout: workout.exercises, workoutId: workout.id}}}>
                                         <WorkoutsBlock 
@@ -44,7 +45,7 @@ class workoutsGrid extends Component {
                                             totalTime={workout.totalTime} />
                                     </Link>
                                     <div className="workoutsBlock__edit">
-                                        <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`, state: {workout: workout.exercises, workoutId: workout.id}}}>
+                                        <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`, state: {workout: workout.exercises, workoutId: workout.id, workoutIndex: index}}}>
                                             <h3><i className="far fa-edit"></i> Edit</h3>
                                         </Link>
                                         <h3 onClick={() => this.handleDeleteModal(workout.id)}><i className="far fa-trash-alt"></i> Delete</h3>

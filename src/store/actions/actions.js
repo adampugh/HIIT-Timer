@@ -1,10 +1,9 @@
 import * as actionTypes from "./actionTypes";
-import uuid from "uuid";
 
-export const addWorkout = ({title, totalTime, exercises}) => ({
+export const addWorkout = ({id, title, totalTime, exercises}) => ({
     type: actionTypes.ADD_WORKOUT,
     workout: {
-        id: uuid(),
+        id,
         title,
         totalTime,
         exercises
@@ -18,25 +17,15 @@ export const deleteWorkout = (id) => ({
 });
 
 // add exercise
-export const addExercise = (exercise, workoutId) => {
-    if (exercise.breakIncluded) {
-        return {
-            type: actionTypes.ADD_EXERCISE,
-            exercise,
-            workoutId
-        }
-    } else {
-        return {
-            type: actionTypes.ADD_EXERCISE,
-            exercise: {
-                exerciseName: exercise.exerciseName,
-                exerciseColor: exercise.exerciseColor,
-                exerciseMinutes: exercise.exerciseMinutes,
-                exerciseSeconds: exercise.exerciseSeconds
-            },
-            workoutId
-        }
-    }
-}
+export const addExercise = (exercise, workoutId) => ({
+    type: actionTypes.ADD_EXERCISE,
+    exercise,
+    workoutId
+});
 
 // delete exercise
+export const deleteExercise = (index, workoutId) => ({
+    type: actionTypes.DELETE_EXERCISE,
+    index,
+    workoutId
+});

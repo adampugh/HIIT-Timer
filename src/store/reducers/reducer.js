@@ -55,28 +55,34 @@ const reducer = (state = initialState, action) => {
                     })
             };
         case actionTypes.ADD_EXERCISE:
-            if (action.exercise.breakIncluded) {
-                console.log(action.workoutId);
-                // split exercise into break and exercise
-            } else {
-                return {
-                    ...state,
-                    // find workout index and add exercise 
-                    // , action.exercise
-                    // workouts: state.workouts.map(workout => workout.id === action.workoutId ?  : workout)
-                    workouts: state.workouts.map((workout, index) => {
-                        if (workout.id === action.workoutId) {
-                            return {
-                                ...workout,
-                                exercises: [...workout.exercises, action.exercise]
-                            }
-                        } else {
-                            return workout;
+            return {
+                ...state,
+                workouts: state.workouts.map((workout, index) => {
+                    if (workout.id === action.workoutId) {
+                        return {
+                            ...workout,
+                            exercises: [...workout.exercises, action.exercise]
                         }
-                    })
-                }
+                    } else {
+                        return {...workout};
+                    }
+                })
             }
-            break;
+        // pass workoutId - doesn't exist at the moment
+        case actionTypes.DELETE_EXERCISE:
+            return {
+                ...state,
+                workouts: state.workouts.map((workout, index) => {
+                    if (workout.id === action.workoutId) {
+                        return {
+                            ...workout,
+                            exercises: workout.exercises.filter((exercise, index) => index !== action.index)
+                        }
+                    } else {
+                        return {...workout}
+                    }
+                })
+            }
         default: 
             return state;
     }
