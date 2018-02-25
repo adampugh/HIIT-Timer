@@ -5,10 +5,6 @@ import WorkoutsBlock from "./workoutsBlock";
 import CreateModal from "../../components/UI/createModal";
 import DeleteModal from "../../components/UI/deleteModal";
 
-// add workout delete modal 
-// within modal dispatch delete workout action 
-// will have to pass id to modal
-
 class workoutsGrid extends Component {
     state = {
         selectedWorkoutId: null

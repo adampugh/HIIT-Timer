@@ -13,7 +13,6 @@ const customStyles = {
       }
 }
 
-// pass in index and dispatch action
 class deleteExerciseModal extends Component {
     handleDelete(index, workoutId) {
         this.props.deleteExercise(index, workoutId);

@@ -68,7 +68,6 @@ const reducer = (state = initialState, action) => {
                     }
                 })
             }
-        // pass workoutId - doesn't exist at the moment
         case actionTypes.DELETE_EXERCISE:
             return {
                 ...state,

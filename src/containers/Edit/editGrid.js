@@ -10,13 +10,11 @@ class editGrid extends Component {
     }
 
     handleDeleteModal = (exerciseIndex) => {
-        // alert(this.props.workoutId);
         this.setState({
             selectedExerciseIndex: exerciseIndex
         });
         this.props.handleOpenDeleteModal()
     }
-
 
     render() {
         return (
