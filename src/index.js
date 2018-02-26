@@ -9,6 +9,7 @@ import './styles/styles.scss';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import reducer from "./store/reducers/reducer";
+import "./firebase/firebase";
 
 const store = createStore(reducer, /* preloadedState, */ devToolsEnhancer());
 
