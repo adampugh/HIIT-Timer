@@ -12,6 +12,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import reducer from "./store/reducers/reducer";
 import "./firebase/firebase";
+import { startFetchWorkouts } from "./store/actions/actions";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -39,7 +40,13 @@ const app = (
     </Provider>
 );
 
-ReactDOM.render( app, document.getElementById('root'));
-registerServiceWorker();
 
-//BrowserRouter
+// ReactDOM.render( <p>...loading</p>, document.getElementById('root'));
+
+// store.dispatch(startFetchWorkouts()).then(() => {
+    ReactDOM.render( app, document.getElementById('root'));
+    registerServiceWorker();
+// });
+
+// ReactDOM.render( app, document.getElementById('root'));
+

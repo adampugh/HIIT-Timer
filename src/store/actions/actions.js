@@ -8,10 +8,11 @@ export const addWorkout = (workout) => ({
     workout
 });
 
+// could remove id? set by fb?
 export const startAddWorkout = ({id, title, totalTime, exercises, index}) => {
     return (dispatch) => {
         const workout = {
-            id,
+            // id,
             title,
             totalTime,
             // exercises is empty array - wont be saved to fb
@@ -19,10 +20,13 @@ export const startAddWorkout = ({id, title, totalTime, exercises, index}) => {
             exercises
         };
         const workoutIndex = index;
-        database.ref("workouts").push(workout).then(() => {
-            // redirect here
-            
-            dispatch(addWorkout(workout));
+        database.ref("workouts").push(workout).then((ref) => {
+
+            dispatch(addWorkout({
+                id: ref.key,
+                ...workout
+            }));
+
             dispatch(push({
                 pathname: `/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`,
                 state: {
@@ -55,3 +59,25 @@ export const deleteExercise = (index, workoutId) => ({
     index,
     workoutId
 });
+
+// FETCH_WORKOUTS
+export const fetchWorkouts = (workouts) => ({
+    type: actionTypes.FETCH_WORKOUTS,
+    workouts
+});
+
+export const startFetchWorkouts = () => {
+    return (dispatch) => {
+        return database.ref("workouts").once("value").then((snapshot) => {
+            const workouts = [];
+            snapshot.forEach((childSnapshot) => {
+                workouts.push({
+                    id: childSnapshot.key,
+                    ...childSnapshot.val()
+                });
+            });
+            console.log(workouts);
+            dispatch(fetchWorkouts(workouts));
+        });
+    }
+};

@@ -6,12 +6,16 @@ import Navbar from "../../components/UI/navbarLoggedIn";
 import WorkoutsBanner from "./workoutsbanner";
 import WorkoutsGrid from "./workoutsGrid";
 import Footer from "../../components/UI/footer";
-
+import * as actions from "../../store/actions/actions";
 
 class Workouts extends Component {
     state = {
         createModalOpen: false,
         deleteModalOpen: false
+    }
+
+    componentWillMount() {
+        this.props.startFetchWorkouts();
     }
 
     openCreateModal = () => {
@@ -38,7 +42,7 @@ class Workouts extends Component {
         });
     }
 
-    render() {
+    render() { 
         return (
             <div>
                 <Navbar />
@@ -52,7 +56,7 @@ class Workouts extends Component {
                     handleOpenDeleteModal={this.openDeleteModal}
                     handleCloseDeleteModal={this.closeDeleteModal} />
                 <Footer />
-            </div>
+            </div> 
         );
     }
 }
@@ -63,5 +67,11 @@ const mapStateToProps = state => {
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+        startFetchWorkouts: () => dispatch(actions.startFetchWorkouts())
+    }
+}
 
-export default connect(mapStateToProps)(Workouts);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Workouts);
