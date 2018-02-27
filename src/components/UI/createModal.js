@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Modal from "react-modal";
 import uuid from "uuid";
@@ -36,9 +35,10 @@ class createModal extends Component {
             id: this.state.workoutId,
             title: this.state.workoutUrl,
             totalTime: 0,
-            exercises: []
+            exercises: [],
+            index: this.props.workoutIndex
         };
-        this.props.addWorkout(workout);
+        this.props.startAddWorkout(workout);
     }
 
     render() {
@@ -69,15 +69,14 @@ class createModal extends Component {
                 <div className="modal--create">
                     <label>Name</label>
                     <input type="text" maxLength="20" onChange={(e) => this.updateUrl(e)}/>
-                    <Link to={{pathname:`/workouts/${this.state.workoutUrl.split(" ").join("-").toLowerCase()}/edit`, 
-                        state: {workout: [], workoutId: this.state.workoutId, workoutIndex: this.props.workoutIndex}}}>
+                    
                         <button 
                             onClick={this.handleOnClick} 
                             disabled={this.state.workoutUrl.length < 1} 
                             className="modal__button">
                             Create Workout
                         </button>
-                    </Link>
+                   
                 </div>
             </div>
         </Modal>
@@ -87,12 +86,9 @@ class createModal extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addWorkout: (workout) => dispatch(actions.addWorkout(workout))
+        startAddWorkout: (workout) => dispatch(actions.startAddWorkout(workout))
     }
 }
 
 
 export default connect(null, mapDispatchToProps)(createModal);
-
-
-

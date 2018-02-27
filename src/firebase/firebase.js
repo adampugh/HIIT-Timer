@@ -1,25 +1,48 @@
 import * as firebase from "firebase";
 
-
+const config = {
+    
+};
 
 firebase.initializeApp(config);
 
 const database = firebase.database();
 
+// const workout = {
+//     id: 123,
+//     title: "ues",
+//     totalTime: 10,
+//     exercises: {
+//         asadf: {
+//             name: "squat",
+//             time: 20
+//         }
+//     }
+// };
+// database.ref("workouts").push(workout);
+
+export { firebase, database as default };
 
 
+// database.ref("workouts")
+//     .on("value", (snapshot) => {
+//         const workouts = [];
+//         snapshot.forEach((workout) => {
+//             workouts.push({
+//                 id: workout.key,
+//                 ...workout.val()
+//             });
+//         });
+//         console.log(workouts);
+//     });
 
-database.ref("workouts")
-    .on("value", (snapshot) => {
-        const workouts = [];
-        snapshot.forEach((workout) => {
-            workouts.push({
-                id: workout.key,
-                ...workout.val()
-            });
-        });
-        console.log(workouts);
-    });
+
+// database.ref("workouts/-L6IUQ6Vg22KgRe6SNtj/exercises/asdf").set({
+//     name: "squats",
+//     time: 20,
+//     color: "green"
+// });
+
 
 // // subscribe to child_removed event - can also use child_added, child_changed
 // database.ref("workouts").on("child_removed", (snapshot) => {
@@ -40,9 +63,6 @@ database.ref("workouts")
 //             });
 //         })
 //     });
-
-
-
 
 // database.ref("workouts").push({
 //     title: "no"

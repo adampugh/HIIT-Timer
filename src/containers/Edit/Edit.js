@@ -62,7 +62,7 @@ class Edit extends Component {
 
 const mapStateToProps = state => {
     return {
-        workouts: state.workouts
+        workouts: state.reducer.workouts
     }
 }
 
