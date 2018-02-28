@@ -51,4 +51,28 @@ test("should return DELETE_EXERCISE action object", () => {
     });
 });
 
+// FETCH_WORKOUTS
+test("should return FETCH_WORKOUTS action object", () => {
+    const workouts = [
+        {
+            id: "123",
+            title: "leg workout",
+            totalTime: 60
+        }, {
+            id: "456",
+            title: "shoulder workout",
+            totalTime: 120
+        }
+    ]
+    const action = actions.fetchWorkouts(workouts);
+    expect(action).toEqual({
+        type: actionTypes.FETCH_WORKOUTS,
+        workouts
+    });
+});
+
+
+
+
+
 //expect.any(String)
