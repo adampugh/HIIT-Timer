@@ -6,12 +6,14 @@ import DeleteExerciseModal from "../../components/UI/deleteExerciseModal";
 
 class editGrid extends Component {
     state = {
-        selectedExerciseIndex: null
+        selectedExerciseIndex: null,
+        selectedExerciseId: null
     }
 
-    handleDeleteModal = (exerciseIndex) => {
+    handleDeleteModal = (exerciseIndex, exerciseId) => {
         this.setState({
-            selectedExerciseIndex: exerciseIndex
+            selectedExerciseIndex: exerciseIndex,
+            selectedExerciseId: exerciseId 
         });
         this.props.handleOpenDeleteModal()
     }
@@ -29,6 +31,7 @@ class editGrid extends Component {
                     handleCloseModal={this.props.handleCloseDeleteModal} 
                     modalTitle="Exercise"
                     exerciseIndex={this.state.selectedExerciseIndex}
+                    exerciseId={this.state.selectedExerciseId}
                     workoutId={this.props.workoutId}
                 />
                 <div className="edit__wrapper">
@@ -42,7 +45,7 @@ class editGrid extends Component {
                                         color={exercise.color}
                                     />
                                     <div className="editBlock__delete">
-                                        <h3 onClick={() => this.handleDeleteModal(index)}><i className="far fa-trash-alt"></i> Delete</h3>
+                                        <h3 onClick={() => this.handleDeleteModal(index, exercise.id)}><i className="far fa-trash-alt"></i> Delete</h3>
                                     </div>
                                 </div>
                             )}

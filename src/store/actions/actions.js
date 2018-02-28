@@ -81,6 +81,15 @@ export const deleteExercise = (index, workoutId) => ({
     workoutId
 });
 
+export const startDeleteExercise = (index, workoutId, exerciseId) => {
+    return (dispatch) => {
+        database.ref(`workouts/${workoutId}/exercises/${exerciseId}`).remove().then((ref) => {
+            dispatch(deleteExercise(index, workoutId));
+        });
+    };
+};
+
+
 // FETCH_WORKOUTS
 export const fetchWorkouts = (workouts) => ({
     type: actionTypes.FETCH_WORKOUTS,
