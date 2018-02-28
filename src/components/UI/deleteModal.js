@@ -15,7 +15,7 @@ const customStyles = {
 
 class deleteModal extends Component {
     handleDelete(id) {
-        this.props.deleteWorkout(id);
+        this.props.startDeleteWorkout(id);
         this.props.handleCloseModal();
     }
 
@@ -59,7 +59,7 @@ class deleteModal extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        deleteWorkout: (id) => dispatch(actions.deleteWorkout(id))
+        startDeleteWorkout: (id) => dispatch(actions.startDeleteWorkout(id))
     }
 }
 

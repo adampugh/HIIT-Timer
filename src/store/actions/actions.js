@@ -46,12 +46,33 @@ export const deleteWorkout = (id) => ({
     id
 });
 
+export const startDeleteWorkout = (id) => {
+    return (dispatch) => {
+        database.ref(`workouts/${id}`).remove().then((ref) => {
+            dispatch(deleteWorkout(id));
+        });
+    };
+};
+
+
 // ADD_EXERCISE
 export const addExercise = (exercise, workoutId) => ({
     type: actionTypes.ADD_EXERCISE,
     exercise,
     workoutId
 });
+
+export const startAddExercise = (exercise, workoutId) => {
+    return (dispatch) => {
+        database.ref(`workouts/${workoutId}/exercises`).push(exercise).then((ref) => {
+            dispatch(addExercise({
+                id: ref.key,
+                ...exercise
+            }, workoutId));
+        });
+    };
+};
+
 
 // DELETE_EXERCISE
 export const deleteExercise = (index, workoutId) => ({
@@ -71,12 +92,20 @@ export const startFetchWorkouts = () => {
         return database.ref("workouts").once("value").then((snapshot) => {
             const workouts = [];
             snapshot.forEach((childSnapshot) => {
+                // convert exercises obj into array
+                const exercises = [];
+                for (let key in childSnapshot.val().exercises) {
+                    exercises.push( {
+                        id: key,
+                        ...childSnapshot.val().exercises[key]
+                    });
+                }
                 workouts.push({
+                    ...childSnapshot.val(),
                     id: childSnapshot.key,
-                    ...childSnapshot.val()
+                    exercises: exercises || []
                 });
             });
-            console.log(workouts);
             dispatch(fetchWorkouts(workouts));
         });
     }

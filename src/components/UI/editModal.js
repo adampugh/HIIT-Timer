@@ -157,10 +157,10 @@ const formikEditModal = withFormik({
                 color: values.breakColor,
                 time: (values.breakMinutes > 0 ? values.breakMinutes * 60 : "") + values.breakSeconds
             }
-            props.addExercise(exercise, props.workoutId);
-            props.addExercise(exerciseBreak, props.workoutId);
+            props.startAddExercise(exercise, props.workoutId);
+            props.startAddExercise(exerciseBreak, props.workoutId);
         } else {
-            props.addExercise(exercise, props.workoutId);
+            props.startAddExercise(exercise, props.workoutId);
         }
         props.handleCloseModal();
     }
@@ -168,7 +168,7 @@ const formikEditModal = withFormik({
 
 const mapDispatchToProps = dispatch => {
     return {
-        addExercise: (exercise, workoutId) => dispatch(actions.addExercise(exercise, workoutId))
+        startAddExercise: (exercise, workoutId) => dispatch(actions.startAddExercise(exercise, workoutId))
     }
 }
 

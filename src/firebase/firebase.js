@@ -1,6 +1,12 @@
 import * as firebase from "firebase";
 
 const config = {
+    apiKey: "AIzaSyBc36320N25Y3wMYd_gi55mNySRe8S-v3I",
+    authDomain: "hiit-timer-project.firebaseapp.com",
+    databaseURL: "https://hiit-timer-project.firebaseio.com",
+    projectId: "hiit-timer-project",
+    storageBucket: "hiit-timer-project.appspot.com",
+    messagingSenderId: "86774564070"
 };
 
 firebase.initializeApp(config);
