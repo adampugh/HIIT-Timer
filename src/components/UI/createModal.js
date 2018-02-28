@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Modal from "react-modal";
-import uuid from "uuid";
+// import uuid from "uuid";
 
 import * as actions from "../../store/actions/actions";
 
@@ -15,14 +15,14 @@ const customStyles = {
 class createModal extends Component { 
     state = {
         workoutUrl: "",
-        workoutId: null
+        // workoutId: null
     }
 
-    componentWillMount() {
-        this.setState({
-            workoutId: uuid()
-        })
-    }
+    // componentWillMount() {
+    //     this.setState({
+    //         workoutId: uuid()
+    //     })
+    // }
 
     updateUrl = (e) => {
         this.setState({
@@ -32,7 +32,7 @@ class createModal extends Component {
 
     handleOnClick = () => {
         let workout = {
-            id: this.state.workoutId,
+            // id: this.state.workoutId,
             title: this.state.workoutUrl,
             totalTime: 0,
             exercises: [],

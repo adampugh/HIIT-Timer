@@ -31,7 +31,7 @@ export const startAddWorkout = ({id, title, totalTime, exercises, index}) => {
                 pathname: `/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`,
                 state: {
                     workout: [], 
-                    workoutId: workout.id, 
+                    workoutId: ref.key, 
                     workoutIndex
                 }   
             }));
