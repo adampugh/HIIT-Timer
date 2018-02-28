@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 import Navbar from "../../components/UI/navbarLoggedIn";
 import EditBanner from "./editBanner";
@@ -39,24 +40,27 @@ class Edit extends Component {
 
 
     render() {
+        const redirect = <Redirect to="/workouts" />
+        let editPage = !this.props.workouts[this.props.location.state.workoutIndex] ? 
+            <Redirect to="/workouts" /> : (
+                <div>
+                    <Navbar />
+                    <EditBanner />
+                    <EditGrid 
+                        workout={this.props.workouts[this.props.location.state.workoutIndex].exercises}
+                        workoutId={this.props.location.state.workoutId}
+                        editModalIsOpen={this.state.editModalOpen}
+                        handleOpenEditModal={this.openEditModal}
+                        handleCloseEditModal={this.closeEditModal}
+                        deleteModalIsOpen={this.state.deleteModalOpen}
+                        handleOpenDeleteModal={this.openDeleteModal}
+                        handleCloseDeleteModal={this.closeDeleteModal}
+                    />
+                    <Footer />
+                </div>
+            );
 
-        return (
-            <div>
-                <Navbar />
-                <EditBanner />
-                <EditGrid 
-                    workout={this.props.workouts[this.props.location.state.workoutIndex].exercises}
-                    workoutId={this.props.location.state.workoutId}
-                    editModalIsOpen={this.state.editModalOpen}
-                    handleOpenEditModal={this.openEditModal}
-                    handleCloseEditModal={this.closeEditModal}
-                    deleteModalIsOpen={this.state.deleteModalOpen}
-                    handleOpenDeleteModal={this.openDeleteModal}
-                    handleCloseDeleteModal={this.closeDeleteModal}
-                />
-                <Footer />
-            </div>
-        );
+        return editPage;
     }
 }
 
