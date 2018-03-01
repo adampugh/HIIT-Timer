@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Start correctly 1`] = `
+<div>
+  <navbarLoggedIn />
+  <startWorkoutBanner
+    workout={
+      Array [
+        Object {
+          "color": "#40b3e1",
+          "id": "L2453",
+          "name": "squats",
+          "time": 60,
+        },
+        Object {
+          "color": "#40b3e1",
+          "id": "L2435y",
+          "name": "pressups",
+          "time": 60,
+        },
+      ]
+    }
+  />
+  <footer />
+</div>
+`;

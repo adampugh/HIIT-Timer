@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render navbarLoggedOut correctly 1`] = `
+<div>
+  <loginModal />
+  <nav
+    className="navbar navbar--loggedOut"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="navbar__items"
+      >
+        <h2>
+          HIIT Timer
+        </h2>
+        <div
+          className="navbar__links"
+        >
+          <h3>
+            Sign Up / Log In
+          </h3>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

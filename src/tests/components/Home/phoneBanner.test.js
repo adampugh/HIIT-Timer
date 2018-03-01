@@ -8,5 +8,9 @@ test("should render phoneBanner correctly", () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-// test for modal opening function?
-// handleOpenModal={false}
+test("should call handleOpenModal in phoneBanner", () => {
+    const handleOpenModalSpy = jest.fn();
+    const wrapper = shallow(<PhoneBanner handleOpenModal={handleOpenModalSpy} />)
+    wrapper.find('button').simulate("click");
+    expect(handleOpenModalSpy).toHaveBeenCalled();
+});

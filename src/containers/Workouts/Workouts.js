@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 
 
 import Navbar from "../../components/UI/navbarLoggedIn";
-import WorkoutsBanner from "./workoutsbanner";
+import WorkoutsBanner from "./workoutsBanner";
 import WorkoutsGrid from "./workoutsGrid";
 import Footer from "../../components/UI/footer";
 import * as actions from "../../store/actions/actions";
 
-class Workouts extends Component {
+export class Workouts extends Component {
     state = {
         createModalOpen: false,
         deleteModalOpen: false

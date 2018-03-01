@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render editGrid correctly 1`] = `
+<div>
+  <Connect(C)
+    workoutId="L6ERTEQ"
+  />
+  <Connect(deleteExerciseModal)
+    exerciseId={null}
+    exerciseIndex={null}
+    modalTitle="Exercise"
+    workoutId="L6ERTEQ"
+  />
+  <div
+    className="edit__wrapper"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="edit__grid"
+      >
+        <div
+          key="squats0"
+        >
+          <editBlock
+            color="#40b3e1"
+            name="squats"
+            time={60}
+          />
+          <div
+            className="editBlock__delete"
+          >
+            <h3
+              onClick={[Function]}
+            >
+              <i
+                className="far fa-trash-alt"
+              />
+               Delete
+            </h3>
+          </div>
+        </div>
+        <div
+          key="pressups1"
+        >
+          <editBlock
+            color="#40b3e1"
+            name="pressups"
+            time={60}
+          />
+          <div
+            className="editBlock__delete"
+          >
+            <h3
+              onClick={[Function]}
+            >
+              <i
+                className="far fa-trash-alt"
+              />
+               Delete
+            </h3>
+          </div>
+        </div>
+        <div
+          className="edit__addBlock"
+        >
+          <h1>
+            Add an Exercise
+          </h1>
+          <i
+            className="fas fa-plus-circle"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render editGrid correctly without exercises 1`] = `
+<div>
+  <Connect(C)
+    workoutId="L6ERTEQ"
+  />
+  <Connect(deleteExerciseModal)
+    exerciseId={null}
+    exerciseIndex={null}
+    modalTitle="Exercise"
+    workoutId="L6ERTEQ"
+  />
+  <div
+    className="edit__wrapper"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="edit__grid"
+      >
+        <div
+          className="edit__addBlock"
+        >
+          <h1>
+            Add an Exercise
+          </h1>
+          <i
+            className="fas fa-plus-circle"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

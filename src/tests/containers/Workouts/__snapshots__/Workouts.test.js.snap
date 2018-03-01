@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Workouts correctly 1`] = `
+<div>
+  <navbarLoggedIn />
+  <workoutsBanner />
+  <workoutsGrid
+    createModalIsOpen={false}
+    deleteModalIsOpen={false}
+    handleCloseCreateModal={[Function]}
+    handleCloseDeleteModal={[Function]}
+    handleOpenCreateModal={[Function]}
+    handleOpenDeleteModal={[Function]}
+    workouts={
+      Array [
+        Object {
+          "exercises": Array [
+            Object {
+              "color": "#40b3e1",
+              "id": "L2453",
+              "name": "squats",
+              "time": 60,
+            },
+            Object {
+              "color": "#40b3e1",
+              "id": "L2435y",
+              "name": "pressups",
+              "time": 60,
+            },
+          ],
+          "id": "L6ERTEQ",
+          "title": "Leg Workout",
+          "totalTime": 60,
+        },
+        Object {
+          "exercises": Array [
+            Object {
+              "color": "#40b3e1",
+              "id": "L24df3",
+              "name": "box jumps",
+              "time": 180,
+            },
+            Object {
+              "color": "#40b3e1",
+              "id": "L2fdgy",
+              "name": "sit ups",
+              "time": 160,
+            },
+          ],
+          "id": "L6sdg45",
+          "title": "Shoulder Workout",
+          "totalTime": 30,
+        },
+      ]
+    }
+  />
+  <footer />
+</div>
+`;

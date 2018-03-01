@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 var moment = require("moment");
 var momentDurationFormatSetup = require("moment-duration-format");
 
@@ -84,8 +85,9 @@ class startWorkoutBanner extends Component {
             }
         }
         
-
-        return (
+        let startWorkoutBannerPage = this.props.workout.length < 1 ? (
+            <Redirect to="/workouts" />
+        ) : (
             <div className="startWorkoutBanner" onClick={this.handleBannerClick} style={customColor}>
                 <h1>{this.state.currentName}</h1>
                 <h1>{moment.duration(this.state.currentTime, "seconds").format("mm:ss")}</h1>
@@ -104,7 +106,8 @@ class startWorkoutBanner extends Component {
                     </div>
                 </div>
             </div>
-        );
+        )
+        return startWorkoutBannerPage;
     }
 };
 

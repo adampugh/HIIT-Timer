@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render footer correctly 1`] = `
+<footer>
+  <div
+    className="container"
+  >
+    <h1>
+      HIIT Timer
+    </h1>
+    <socialLinks />
+    <h3>
+      © 2018 Design by 
+      <a
+        href="https://adampugh.github.io/kokonoka/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Kokonoka 
+      </a>
+    </h3>
+  </div>
+</footer>
+`;

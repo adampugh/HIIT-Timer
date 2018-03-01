@@ -8,7 +8,7 @@ import EditGrid from "./editGrid";
 import Footer from "../../components/UI/footer";
 
 
-class Edit extends Component {
+export class Edit extends Component {
     state = {
         editModalOpen: false,
         deleteModalOpen: false
@@ -40,7 +40,7 @@ class Edit extends Component {
 
 
     render() {
-        const redirect = <Redirect to="/workouts" />
+        // const redirect = <Redirect to="/workouts" />
         let editPage = !this.props.workouts[this.props.location.state.workoutIndex] ? 
             <Redirect to="/workouts" /> : (
                 <div>

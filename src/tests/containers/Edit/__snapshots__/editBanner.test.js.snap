@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render editBanner correctly 1`] = `
+<div
+  className="bannerText"
+>
+  <div
+    className="bannerText__container"
+  >
+    <h2>
+      Add exercises to create a full HIIT workout. Click the + button below to add a new exercise.
+    </h2>
+    <img
+      alt="arm icon"
+      className="bannerText__image"
+      src="dumbbell-icon.png"
+    />
+  </div>
+</div>
+`;

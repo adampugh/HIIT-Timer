@@ -13,16 +13,26 @@ import Footer from "../../components/UI/footer";
 
 // mapstatetoprops using redux to access db
 
-class Start extends Component {
-    render() {
-        return (
-            <div>
-                <Navbar />
-                <StartWorkoutBanner workout={this.props.location.state.workout} />
-                <Footer />
-            </div>
-        );
-    }
-};
+// class Start extends Component {
+//     render() {
+//         return (
+//             <div>
+//                 <Navbar />
+//                 <StartWorkoutBanner workout={this.props.location.state.workout} />
+//                 <Footer />
+//             </div>
+//         );
+//     }
+// };
+
+const Start = (props) => (
+    <div>
+        <Navbar />
+        <StartWorkoutBanner workout={props.location.state.workout} />
+        <Footer />
+    </div>
+);
+
+
 
 export default Start;

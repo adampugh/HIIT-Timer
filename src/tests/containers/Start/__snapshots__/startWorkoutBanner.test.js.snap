@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render redirect if exercise not passed to startWorkoutBanner 1`] = `
+<Redirect
+  push={false}
+  to="/workouts"
+/>
+`;
+
+exports[`should render startWorkoutBanner correctly 1`] = `
+<div
+  className="startWorkoutBanner"
+  onClick={[Function]}
+  style={
+    Object {
+      "background": "#40b3e1",
+    }
+  }
+>
+  <h1>
+    Start
+  </h1>
+  <h1>
+    00
+  </h1>
+  <div
+    className="startWorkoutBanner__grid"
+  >
+    <div>
+      <h3>
+        Position
+      </h3>
+      <h2>
+        1
+         / 
+        2
+      </h2>
+    </div>
+    <div>
+      <h3>
+        Play
+      </h3>
+      <h3>
+        ▶
+      </h3>
+    </div>
+    <div>
+      <h3>
+        Total Time
+      </h3>
+      <h2>
+        00
+      </h2>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render socialLinks correctly 1`] = `
+<div
+  className="social-links"
+>
+  <span
+    className="twitter"
+  >
+    <i
+      className="fab fa-twitter"
+    />
+  </span>
+  <span>
+    <i
+      className="fab fa-soundcloud"
+    />
+  </span>
+  <span
+    className="youtube"
+  >
+    <i
+      className="fab fa-youtube"
+    />
+  </span>
+</div>
+`;

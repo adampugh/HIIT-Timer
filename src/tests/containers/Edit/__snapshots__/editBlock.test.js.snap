@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render editBlock correctly 1`] = `
+<div
+  className="editBlock"
+  style={
+    Object {
+      "background": undefined,
+    }
+  }
+>
+  <h1>
+    squats
+  </h1>
+  <h1>
+    01:00
+  </h1>
+</div>
+`;

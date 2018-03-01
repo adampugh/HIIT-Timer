@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render workoutsBanner correctly 1`] = `
+<div
+  className="bannerText"
+>
+  <div
+    className="bannerText__container"
+  >
+    <img
+      alt="arm icon"
+      className="workoutsBanner__image"
+      src="arm-icon.png"
+    />
+    <h2>
+      Add a new workout and start today! Click the + button below to add a new workout.
+    </h2>
+  </div>
+</div>
+`;

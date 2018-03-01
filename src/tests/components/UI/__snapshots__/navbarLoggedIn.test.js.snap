@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render navbarLoggedIn correctly 1`] = `
+<nav
+  className="navbar navbar--loggedIn"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="navbar__items"
+    >
+      <h2>
+        HIIT Timer
+      </h2>
+      <div
+        className="navbar__links"
+      >
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          to="/workouts"
+        >
+          <h3>
+            Workouts
+          </h3>
+        </NavLink>
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          to="/"
+        >
+          <h3>
+            Log Out
+          </h3>
+        </NavLink>
+      </div>
+    </div>
+  </div>
+</nav>
+`;
