@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render homePage correctly 1`] = `
+<div>
+  <navbarLoggedOut
+    handleCloseModal={[Function]}
+    handleOpenModal={[Function]}
+    modalOpen={false}
+  />
+  <videoBanner
+    handleOpenModal={[Function]}
+  />
+  <bannerText />
+  <phoneBanner
+    handleOpenModal={[Function]}
+  />
+  <panels />
+  <footer />
+</div>
+`;

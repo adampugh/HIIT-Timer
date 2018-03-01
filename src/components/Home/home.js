@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import Navbar from "../UI/navbar";
 import Navbar from "../UI/navbarLoggedOut";
 import VideoBanner from "./videoBanner";
 import TextBanner from "./bannerText";

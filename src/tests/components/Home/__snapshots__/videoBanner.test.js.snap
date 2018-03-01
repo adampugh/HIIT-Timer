@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render videoBanner correctly 1`] = `
+<header
+  id="header"
+>
+  <div
+    className="video__container"
+  >
+    <div
+      className="video__overlay"
+    >
+      <h1>
+        HIIT Timer
+      </h1>
+      <p>
+        Create awesome workouts and get in shape!
+      </p>
+      <button
+        className="btn"
+      >
+        Log In
+      </button>
+      <socialLinks />
+    </div>
+    <video
+      autoPlay={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+      poster="Workout.jpg"
+    >
+      <source
+        src="Workout.mp4"
+        type="video/mp4"
+      />
+      <source
+        src="Workout.webm"
+        type="video/webm"
+      />
+    </video>
+  </div>
+</header>
+`;

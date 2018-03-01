@@ -1,5 +1,5 @@
-import * as actions from "../../store/actions/actions";
-import * as actionTypes from "../../store/actions/actionTypes";
+import * as actions from "../../../store/actions/actions";
+import * as actionTypes from "../../../store/actions/actionTypes";
 
 // ADD_WORKOUT
 test("should return ADD_WORKOUT action object", () => {
@@ -76,3 +76,6 @@ test("should return FETCH_WORKOUTS action object", () => {
 
 
 //expect.any(String)
+
+
+

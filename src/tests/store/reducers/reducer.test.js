@@ -1,6 +1,6 @@
-import reducer from "../../store/reducers/reducer";
-import workoutState from "../fixtures/workouts";
-import * as actionTypes from "../../store/actions/actionTypes";
+import reducer from "../../../store/reducers/reducer";
+import workoutState from "../../fixtures/workouts";
+import * as actionTypes from "../../../store/actions/actionTypes";
 
 test("should setup default initial values", () => {
     const state = reducer(undefined, { type: "@@INIT" });
