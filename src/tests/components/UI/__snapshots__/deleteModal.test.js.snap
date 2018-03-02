@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DeleteModal correctly 1`] = `
+<Modal
+  appElement={null}
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="modal"
+  closeTimeoutMS={200}
+  contentLabel="login modal"
+  isOpen={false}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+  style={
+    Object {
+      "content": Object {},
+      "overlay": Object {
+        "background": "rgba(0, 0, 0, 0.6)",
+        "zIndex": 2000,
+      },
+    }
+  }
+>
+  <div
+    className="modal__box"
+  >
+    <div
+      className="modal__header"
+    >
+      <div />
+      <div>
+        <h3>
+          Delete Workout
+        </h3>
+      </div>
+      <div
+        className="modal__close"
+      >
+        <h3>
+          <span>
+            <i
+              className="fas fa-times"
+            />
+          </span>
+        </h3>
+      </div>
+    </div>
+    <hr />
+    <p>
+      Do you want to delete this workout?
+    </p>
+    <button
+      className="modal__login-button"
+      onClick={[Function]}
+    >
+      <span>
+        Yes
+      </span>
+    </button>
+    <button
+      className="modal__login-button"
+    >
+      <span>
+        No
+      </span>
+    </button>
+  </div>
+</Modal>
+`;

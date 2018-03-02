@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render loginModal correctly 1`] = `
+<Modal
+  appElement={null}
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="modal"
+  closeTimeoutMS={200}
+  contentLabel="login modal"
+  isOpen={false}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+  style={
+    Object {
+      "content": Object {},
+      "overlay": Object {
+        "background": "rgba(0, 0, 0, 0.6)",
+        "zIndex": 2000,
+      },
+    }
+  }
+>
+  <div
+    className="modal__box"
+  >
+    <div
+      className="modal__header"
+    >
+      <div />
+      <div>
+        <h3>
+          Log In
+        </h3>
+      </div>
+      <div
+        className="modal__close"
+      >
+        <h3>
+          <span>
+            <i
+              className="fas fa-times"
+            />
+          </span>
+        </h3>
+      </div>
+    </div>
+    <hr />
+    <button
+      className="modal__login-button"
+    >
+      <img
+        alt="google logo"
+        src="googlelogo.jpg"
+      />
+      <span>
+        Sign in with Google
+      </span>
+    </button>
+    <button
+      className="modal__login-button"
+    >
+      <img
+        alt="facebook logo"
+        src="facebooklogo.jpg"
+      />
+      <span>
+        Sign in with Facebook
+      </span>
+    </button>
+  </div>
+</Modal>
+`;

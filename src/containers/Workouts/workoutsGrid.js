@@ -27,7 +27,6 @@ class workoutsGrid extends Component {
                 <DeleteModal
                     isOpen={this.props.deleteModalIsOpen}
                     handleCloseModal={this.props.handleCloseDeleteModal} 
-                    modalTitle="Workout"
                     selectedWorkoutId={this.state.selectedWorkoutId}
                     />
                 <div className="workouts__wrapper">

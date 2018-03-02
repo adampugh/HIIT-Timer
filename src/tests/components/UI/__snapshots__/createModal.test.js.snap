@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render createModal correctly 1`] = `
+<Modal
+  appElement={null}
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="modal"
+  closeTimeoutMS={200}
+  contentLabel="create workout modal"
+  isOpen={true}
+  onRequestClose={[Function]}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+  style={
+    Object {
+      "overlay": Object {
+        "background": "rgba(0, 0, 0, 0.6)",
+        "zIndex": 2000,
+      },
+    }
+  }
+>
+  <div
+    className="modal__box"
+  >
+    <div
+      className="modal__header"
+    >
+      <div />
+      <div>
+        <h3>
+          Create Workout
+        </h3>
+      </div>
+      <div
+        className="modal__close"
+      >
+        <h3>
+          <span
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-times"
+            />
+          </span>
+        </h3>
+      </div>
+    </div>
+    <hr />
+    <div
+      className="modal--create"
+    >
+      <label>
+        Name
+      </label>
+      <input
+        maxLength="20"
+        onChange={[Function]}
+        type="text"
+      />
+      <button
+        className="modal__button"
+        disabled={true}
+        onClick={[Function]}
+      >
+        Create Workout
+      </button>
+    </div>
+  </div>
+</Modal>
+`;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render editBlock correctly 1`] = `
+<div
+  className="workoutsBlock"
+>
+  <h1>
+    Leg Workout
+  </h1>
+  <h3>
+    60
+     Minutes
+  </h3>
+  <i
+    className="far fa-play-circle"
+  />
+</div>
+`;

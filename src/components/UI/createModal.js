@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Modal from "react-modal";
-// import uuid from "uuid";
 
 import * as actions from "../../store/actions/actions";
 
@@ -12,17 +11,10 @@ const customStyles = {
       }
 }
 
-class createModal extends Component { 
+export class CreateModal extends Component { 
     state = {
-        workoutUrl: "",
-        // workoutId: null
+        workoutUrl: ""
     }
-
-    // componentWillMount() {
-    //     this.setState({
-    //         workoutId: uuid()
-    //     })
-    // }
 
     updateUrl = (e) => {
         this.setState({
@@ -32,7 +24,6 @@ class createModal extends Component {
 
     handleOnClick = () => {
         let workout = {
-            // id: this.state.workoutId,
             title: this.state.workoutUrl,
             totalTime: 0,
             exercises: [],
@@ -45,14 +36,14 @@ class createModal extends Component {
 
         return (
             <Modal 
-            isOpen={this.props.isOpen}
-            contentLabel="create workout modal"
-            appElement={document.getElementById('root')} 
-            onRequestClose={this.props.handleCloseModal}
-            style={customStyles}
-            closeTimeoutMS={200}
-            className="modal"
-        >
+                isOpen={this.props.isOpen}
+                contentLabel="create workout modal"
+                appElement={document.getElementById('root')} 
+                onRequestClose={this.props.handleCloseModal}
+                style={customStyles}
+                closeTimeoutMS={200}
+                className="modal"
+            >
             <div className="modal__box">
                 <div className="modal__header">
                     <div></div>
@@ -91,4 +82,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(null, mapDispatchToProps)(createModal);
+export default connect(null, mapDispatchToProps)(CreateModal);

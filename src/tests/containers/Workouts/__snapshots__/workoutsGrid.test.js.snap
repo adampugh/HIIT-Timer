@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render workoutsGrid correctly 1`] = `
+<div>
+  <Connect(CreateModal)
+    workoutIndex={2}
+  />
+  <Connect(DeleteModal)
+    selectedWorkoutId={null}
+  />
+  <div
+    className="workouts__wrapper"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="workouts__grid"
+      >
+        <div
+          key="Leg Workout"
+        >
+          <Link
+            replace={false}
+            to={
+              Object {
+                "pathname": "/workouts/leg-workout/start",
+                "state": Object {
+                  "workout": Array [
+                    Object {
+                      "color": "#40b3e1",
+                      "id": "L2453",
+                      "name": "squats",
+                      "time": 60,
+                    },
+                    Object {
+                      "color": "#40b3e1",
+                      "id": "L2435y",
+                      "name": "pressups",
+                      "time": 60,
+                    },
+                  ],
+                  "workoutId": "L6ERTEQ",
+                },
+              }
+            }
+          >
+            <workoutsBlock
+              title="Leg Workout"
+              totalTime={60}
+            />
+          </Link>
+          <div
+            className="workoutsBlock__edit"
+          >
+            <Link
+              replace={false}
+              to={
+                Object {
+                  "pathname": "/workouts/leg-workout/edit",
+                  "state": Object {
+                    "workout": Array [
+                      Object {
+                        "color": "#40b3e1",
+                        "id": "L2453",
+                        "name": "squats",
+                        "time": 60,
+                      },
+                      Object {
+                        "color": "#40b3e1",
+                        "id": "L2435y",
+                        "name": "pressups",
+                        "time": 60,
+                      },
+                    ],
+                    "workoutId": "L6ERTEQ",
+                    "workoutIndex": 0,
+                  },
+                }
+              }
+            >
+              <h3>
+                <i
+                  className="far fa-edit"
+                />
+                 Edit
+              </h3>
+            </Link>
+            <h3
+              onClick={[Function]}
+            >
+              <i
+                className="far fa-trash-alt"
+              />
+               Delete
+            </h3>
+          </div>
+        </div>
+        <div
+          key="Shoulder Workout"
+        >
+          <Link
+            replace={false}
+            to={
+              Object {
+                "pathname": "/workouts/shoulder-workout/start",
+                "state": Object {
+                  "workout": Array [
+                    Object {
+                      "color": "#40b3e1",
+                      "id": "L24df3",
+                      "name": "box jumps",
+                      "time": 180,
+                    },
+                    Object {
+                      "color": "#40b3e1",
+                      "id": "L2fdgy",
+                      "name": "sit ups",
+                      "time": 160,
+                    },
+                  ],
+                  "workoutId": "L6sdg45",
+                },
+              }
+            }
+          >
+            <workoutsBlock
+              title="Shoulder Workout"
+              totalTime={30}
+            />
+          </Link>
+          <div
+            className="workoutsBlock__edit"
+          >
+            <Link
+              replace={false}
+              to={
+                Object {
+                  "pathname": "/workouts/shoulder-workout/edit",
+                  "state": Object {
+                    "workout": Array [
+                      Object {
+                        "color": "#40b3e1",
+                        "id": "L24df3",
+                        "name": "box jumps",
+                        "time": 180,
+                      },
+                      Object {
+                        "color": "#40b3e1",
+                        "id": "L2fdgy",
+                        "name": "sit ups",
+                        "time": 160,
+                      },
+                    ],
+                    "workoutId": "L6sdg45",
+                    "workoutIndex": 1,
+                  },
+                }
+              }
+            >
+              <h3>
+                <i
+                  className="far fa-edit"
+                />
+                 Edit
+              </h3>
+            </Link>
+            <h3
+              onClick={[Function]}
+            >
+              <i
+                className="far fa-trash-alt"
+              />
+               Delete
+            </h3>
+          </div>
+        </div>
+        <div
+          className="workouts__addBlock"
+        >
+          <h1>
+            Create a workout
+          </h1>
+          <i
+            className="fas fa-plus-circle"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render workoutsGrid correctly without any workouts 1`] = `
+<div>
+  <Connect(CreateModal)
+    workoutIndex={0}
+  />
+  <Connect(DeleteModal)
+    selectedWorkoutId={null}
+  />
+  <div
+    className="workouts__wrapper"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="workouts__grid"
+      >
+        <div
+          className="workouts__addBlock"
+        >
+          <h1>
+            Create a workout
+          </h1>
+          <i
+            className="fas fa-plus-circle"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

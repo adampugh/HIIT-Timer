@@ -7,9 +7,6 @@ import FacebookIcon from "../../assets/photos/facebooklogo.jpg";
 const customStyles = {
     overlay : {
         zIndex: 2000,
-        // display: 'flex',
-        // alignItems: "center",
-        // justifyContent: "center"
         background: "rgba(0, 0, 0, 0.6)"
       },
       content : {

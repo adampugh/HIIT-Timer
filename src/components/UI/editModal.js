@@ -21,7 +21,7 @@ const timeValues = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", 
                     "54", "55", "56", "57", "58", "59"
 ]
 
-const editModal = (props) => (
+export const EditModal = (props) => (
     <Modal 
         isOpen={props.isOpen}
         contentLabel="add exercise modal"
@@ -120,7 +120,7 @@ const editModal = (props) => (
     </Modal>
 );
 
-const formikEditModal = withFormik({
+export const FormikEditModal = withFormik({
     mapPropsToValues() {
         return {
             exerciseName: "",
@@ -164,7 +164,7 @@ const formikEditModal = withFormik({
         }
         props.handleCloseModal();
     }
-})(editModal);
+})(EditModal);
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -172,4 +172,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(formikEditModal);
+export default connect(null, mapDispatchToProps)(FormikEditModal);

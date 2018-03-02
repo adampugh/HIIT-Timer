@@ -13,7 +13,7 @@ const customStyles = {
       }
 }
 
-class deleteExerciseModal extends Component {
+export class DeleteExerciseModal extends Component {
     handleDelete(index, workoutId, exerciseId) {
         this.props.startDeleteExercise(index, workoutId, exerciseId);
         this.props.handleCloseModal();
@@ -34,7 +34,7 @@ class deleteExerciseModal extends Component {
                 <div className="modal__box">
                     <div className="modal__header">
                         <div></div>
-                        <div><h3>Delete {this.props.modalTitle}</h3></div>
+                        <div><h3>Delete Exercise</h3></div>
                         <div className="modal__close">
                             <h3>
                                 <span onClick={this.props.handleCloseModal}>
@@ -44,7 +44,7 @@ class deleteExerciseModal extends Component {
                         </div>
                     </div>
                     <hr />
-                    <p>Do you want to delete this {this.props.modalTitle.toLowerCase()}?</p>
+                    <p>Do you want to delete this exercise?</p>
                     <button className="modal__login-button" onClick={() => this.handleDelete(this.props.exerciseIndex, this.props.workoutId, this.props.exerciseId)} >
                         <span>Yes</span>
                     </button>
@@ -63,4 +63,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(deleteExerciseModal);
+export default connect(null, mapDispatchToProps)(DeleteExerciseModal);
