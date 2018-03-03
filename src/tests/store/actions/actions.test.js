@@ -1,5 +1,12 @@
+import configureMockStore from "redux-mock-store";
+import thunk from "redux-thunk";
+
 import * as actions from "../../../store/actions/actions";
 import * as actionTypes from "../../../store/actions/actionTypes";
+import database from "../../../firebase/firebase";
+
+const createMockStore = configureMockStore([thunk]);
+
 
 // ADD_WORKOUT
 test("should return ADD_WORKOUT action object", () => {
@@ -14,7 +21,37 @@ test("should return ADD_WORKOUT action object", () => {
         type: actionTypes.ADD_WORKOUT,
         workout
     });
-})
+});
+
+test("should add workout to database and store", (done) => {
+    const store = createMockStore({workouts: []});
+    const workout = {
+        id: "x",
+        title: "leg workout",
+        totalTime: 0,
+        exercises: [],
+        index: 2
+    };
+    store.dispatch(actions.startAddWorkout(workout)).then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: actionTypes.ADD_WORKOUT,
+            workout: {
+                id: expect.any(String),
+                title: "leg workout",
+                totalTime: 0,
+                exercises: []
+            }
+        });
+        return database.ref(`workouts/${actions[0].workout.id}`).once("value");
+    }).then((snapshot) => {
+        expect(snapshot.val()).toEqual({
+            title: "leg workout",
+            totalTime: 0
+        });
+        done();
+    });
+});
 
 // DELETE_WORKOUT
 test("should return DELETE_WORKOUT action object", () => {
@@ -23,6 +60,19 @@ test("should return DELETE_WORKOUT action object", () => {
         type: actionTypes.DELETE_WORKOUT,
         id: "123"
     });
+});
+
+test("should remove workout from store", (done) => {
+    const store = createMockStore({workouts: []});
+    const id = "x";
+    store.dispatch(actions.startDeleteWorkout(id)).then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: actionTypes.DELETE_WORKOUT,
+            id
+        });
+        done();
+    })
 });
 
 // ADD_EXERCISE
@@ -71,11 +121,20 @@ test("should return FETCH_WORKOUTS action object", () => {
     });
 });
 
+// AUTH ACTIONS
 
+test("should generate login action object", () => {
+    const uid = "123";
+    const action = actions.login(uid);
+    expect(action).toEqual({
+        type: actionTypes.LOGIN,
+        uid
+    });
+});
 
-
-
-//expect.any(String)
-
-
-
+test("should generate logoug action object", () => {
+    const action = actions.logout();
+    expect(action).toEqual({
+        type: actionTypes.LOGOUT
+    });
+});

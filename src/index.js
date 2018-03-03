@@ -11,8 +11,10 @@ import './styles/styles.scss';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import reducer from "./store/reducers/reducer";
-import "./firebase/firebase";
-import { startFetchWorkouts } from "./store/actions/actions";
+import authReducer from "./store/reducers/auth";
+import { firebase } from "./firebase/firebase";
+// import { startFetchWorkouts } from "./store/actions/actions";
+import * as actions from "./store/actions/actions";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -26,6 +28,7 @@ const middleware = routerMiddleware(history)
 const store = createStore(
     combineReducers({
         reducer,
+        auth: authReducer,
         routing: routerReducer
     }),
     composeEnhancers(applyMiddleware(thunk, middleware))
@@ -41,12 +44,30 @@ const app = (
 );
 
 
-// ReactDOM.render( <p>...loading</p>, document.getElementById('root'));
+let hasRendered = false;
+const renderApp = () => {
+    if (!hasRendered) {
+        ReactDOM.render( app, document.getElementById('root'));
+        registerServiceWorker();
+        hasRendered = true;
+    }
+};
 
-// store.dispatch(startFetchWorkouts()).then(() => {
-    ReactDOM.render( app, document.getElementById('root'));
-    registerServiceWorker();
-// });
+ReactDOM.render( <p>...loading</p>, document.getElementById('root'));
 
 // ReactDOM.render( app, document.getElementById('root'));
-
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        store.dispatch(actions.login(user.uid));
+        store.dispatch(actions.startFetchWorkouts()).then(() => {
+            renderApp();
+            if (history.location.pathname === "/") {
+                history.push("/workouts");
+            }
+        });
+    } else {
+        store.dispatch(actions.logout());
+        renderApp();
+        history.push("/");
+    }
+});

@@ -1,5 +1,6 @@
 import * as actionTypes from "./actionTypes";
 import database from "../../firebase/firebase";
+import { firebase, googleAuthProvider } from "../../firebase/firebase";
 import { push } from 'react-router-redux';
 
 // ADD_WORKOUT
@@ -20,7 +21,7 @@ export const startAddWorkout = ({id, title, totalTime, exercises, index}) => {
             exercises
         };
         const workoutIndex = index;
-        database.ref("workouts").push(workout).then((ref) => {
+        return database.ref("workouts").push(workout).then((ref) => {
 
             dispatch(addWorkout({
                 id: ref.key,
@@ -48,7 +49,7 @@ export const deleteWorkout = (id) => ({
 
 export const startDeleteWorkout = (id) => {
     return (dispatch) => {
-        database.ref(`workouts/${id}`).remove().then((ref) => {
+        return database.ref(`workouts/${id}`).remove().then((ref) => {
             dispatch(deleteWorkout(id));
         });
     };
@@ -118,4 +119,27 @@ export const startFetchWorkouts = () => {
             dispatch(fetchWorkouts(workouts));
         });
     }
+};
+
+
+export const login = (uid) => ({
+    type: actionTypes.LOGIN,
+    uid
+});
+
+export const startLogin = () => {
+    return () => {
+        return firebase.auth().signInWithPopup(googleAuthProvider);
+    };
+};
+
+
+export const logout = () => ({
+    type: actionTypes.LOGOUT
+});
+
+export const startLogout = () => {
+    return () => {
+        return firebase.auth().signOut();
+    };
 };

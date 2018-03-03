@@ -2,7 +2,7 @@
 
 exports[`should render Start correctly 1`] = `
 <div>
-  <navbarLoggedIn />
+  <Connect(Component) />
   <startWorkoutBanner
     workout={
       Array [

@@ -25,15 +25,9 @@ exports[`should render navbarLoggedIn correctly 1`] = `
             Workouts
           </h3>
         </NavLink>
-        <NavLink
-          activeClassName="active"
-          ariaCurrent="true"
-          to="/"
-        >
-          <h3>
-            Log Out
-          </h3>
-        </NavLink>
+        <h3>
+          Log Out
+        </h3>
       </div>
     </div>
   </div>

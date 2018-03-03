@@ -2,7 +2,7 @@
 
 exports[`should render Workouts correctly 1`] = `
 <div>
-  <navbarLoggedIn />
+  <Connect(Component) />
   <workoutsBanner />
   <workoutsGrid
     createModalIsOpen={false}

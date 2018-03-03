@@ -2,7 +2,7 @@
 
 exports[`should render Edit correctly 1`] = `
 <div>
-  <navbarLoggedIn />
+  <Connect(Component) />
   <bannerText />
   <editGrid
     deleteModalIsOpen={false}

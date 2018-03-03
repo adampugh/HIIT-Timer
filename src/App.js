@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+
 import homePage from './components/Home/home';
 import workoutsPage from "./containers/Workouts/Workouts";
 import startPage from "./containers/Start/Start";
 import editPage from "./containers/Edit/Edit";
-
-// <Route path="/workouts" component={workoutsPage} />
-// <Route path="/create" component={createPage} />
-// <Route path="/start" component={startPage} />
+import PrivateRoute from "./routers/privateRoute";
 
 
 class App extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/workouts" exact component={workoutsPage} />  
-        <Route path="/workouts/:id/start" component={startPage} />
-        <Route path="/workouts/:id/edit" component={editPage} />
+        <PrivateRoute path="/workouts" exact component={workoutsPage} />  
+        <PrivateRoute path="/workouts/:id/start" component={startPage} />
+        <PrivateRoute path="/workouts/:id/edit" component={editPage} />
         <Route path="/" exact component={homePage} />
         <Redirect to="/" />
       </Switch>
