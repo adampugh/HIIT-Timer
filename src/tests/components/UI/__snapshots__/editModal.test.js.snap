@@ -455,58 +455,10 @@ exports[`should render EditModal correctly 1`] = `
                 00
               </option>
               <option
-                key="exerciseSec01"
-                value="01"
-              >
-                01
-              </option>
-              <option
-                key="exerciseSec02"
-                value="02"
-              >
-                02
-              </option>
-              <option
-                key="exerciseSec03"
-                value="03"
-              >
-                03
-              </option>
-              <option
-                key="exerciseSec04"
-                value="04"
-              >
-                04
-              </option>
-              <option
                 key="exerciseSec05"
                 value="05"
               >
                 05
-              </option>
-              <option
-                key="exerciseSec06"
-                value="06"
-              >
-                06
-              </option>
-              <option
-                key="exerciseSec07"
-                value="07"
-              >
-                07
-              </option>
-              <option
-                key="exerciseSec08"
-                value="08"
-              >
-                08
-              </option>
-              <option
-                key="exerciseSec09"
-                value="09"
-              >
-                09
               </option>
               <option
                 key="exerciseSec10"
@@ -515,58 +467,10 @@ exports[`should render EditModal correctly 1`] = `
                 10
               </option>
               <option
-                key="exerciseSec11"
-                value="11"
-              >
-                11
-              </option>
-              <option
-                key="exerciseSec12"
-                value="12"
-              >
-                12
-              </option>
-              <option
-                key="exerciseSec13"
-                value="13"
-              >
-                13
-              </option>
-              <option
-                key="exerciseSec14"
-                value="14"
-              >
-                14
-              </option>
-              <option
                 key="exerciseSec15"
                 value="15"
               >
                 15
-              </option>
-              <option
-                key="exerciseSec16"
-                value="16"
-              >
-                16
-              </option>
-              <option
-                key="exerciseSec17"
-                value="17"
-              >
-                17
-              </option>
-              <option
-                key="exerciseSec18"
-                value="18"
-              >
-                18
-              </option>
-              <option
-                key="exerciseSec19"
-                value="19"
-              >
-                19
               </option>
               <option
                 key="exerciseSec20"
@@ -575,58 +479,10 @@ exports[`should render EditModal correctly 1`] = `
                 20
               </option>
               <option
-                key="exerciseSec21"
-                value="21"
-              >
-                21
-              </option>
-              <option
-                key="exerciseSec22"
-                value="22"
-              >
-                22
-              </option>
-              <option
-                key="exerciseSec23"
-                value="23"
-              >
-                23
-              </option>
-              <option
-                key="exerciseSec24"
-                value="24"
-              >
-                24
-              </option>
-              <option
                 key="exerciseSec25"
                 value="25"
               >
                 25
-              </option>
-              <option
-                key="exerciseSec26"
-                value="26"
-              >
-                26
-              </option>
-              <option
-                key="exerciseSec27"
-                value="27"
-              >
-                27
-              </option>
-              <option
-                key="exerciseSec28"
-                value="28"
-              >
-                28
-              </option>
-              <option
-                key="exerciseSec29"
-                value="29"
-              >
-                29
               </option>
               <option
                 key="exerciseSec30"
@@ -635,58 +491,10 @@ exports[`should render EditModal correctly 1`] = `
                 30
               </option>
               <option
-                key="exerciseSec31"
-                value="31"
-              >
-                31
-              </option>
-              <option
-                key="exerciseSec32"
-                value="32"
-              >
-                32
-              </option>
-              <option
-                key="exerciseSec33"
-                value="33"
-              >
-                33
-              </option>
-              <option
-                key="exerciseSec34"
-                value="34"
-              >
-                34
-              </option>
-              <option
                 key="exerciseSec35"
                 value="35"
               >
                 35
-              </option>
-              <option
-                key="exerciseSec36"
-                value="36"
-              >
-                36
-              </option>
-              <option
-                key="exerciseSec37"
-                value="37"
-              >
-                37
-              </option>
-              <option
-                key="exerciseSec38"
-                value="38"
-              >
-                38
-              </option>
-              <option
-                key="exerciseSec39"
-                value="39"
-              >
-                39
               </option>
               <option
                 key="exerciseSec40"
@@ -695,58 +503,10 @@ exports[`should render EditModal correctly 1`] = `
                 40
               </option>
               <option
-                key="exerciseSec41"
-                value="41"
-              >
-                41
-              </option>
-              <option
-                key="exerciseSec42"
-                value="42"
-              >
-                42
-              </option>
-              <option
-                key="exerciseSec43"
-                value="43"
-              >
-                43
-              </option>
-              <option
-                key="exerciseSec44"
-                value="44"
-              >
-                44
-              </option>
-              <option
                 key="exerciseSec45"
                 value="45"
               >
                 45
-              </option>
-              <option
-                key="exerciseSec46"
-                value="46"
-              >
-                46
-              </option>
-              <option
-                key="exerciseSec47"
-                value="47"
-              >
-                47
-              </option>
-              <option
-                key="exerciseSec48"
-                value="48"
-              >
-                48
-              </option>
-              <option
-                key="exerciseSec49"
-                value="49"
-              >
-                49
               </option>
               <option
                 key="exerciseSec50"
@@ -755,58 +515,10 @@ exports[`should render EditModal correctly 1`] = `
                 50
               </option>
               <option
-                key="exerciseSec51"
-                value="51"
-              >
-                51
-              </option>
-              <option
-                key="exerciseSec52"
-                value="52"
-              >
-                52
-              </option>
-              <option
-                key="exerciseSec53"
-                value="53"
-              >
-                53
-              </option>
-              <option
-                key="exerciseSec54"
-                value="54"
-              >
-                54
-              </option>
-              <option
                 key="exerciseSec55"
                 value="55"
               >
                 55
-              </option>
-              <option
-                key="exerciseSec56"
-                value="56"
-              >
-                56
-              </option>
-              <option
-                key="exerciseSec57"
-                value="57"
-              >
-                57
-              </option>
-              <option
-                key="exerciseSec58"
-                value="58"
-              >
-                58
-              </option>
-              <option
-                key="exerciseSec59"
-                value="59"
-              >
-                59
               </option>
             </Field>
           </div>

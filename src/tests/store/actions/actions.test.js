@@ -13,7 +13,6 @@ test("should return ADD_WORKOUT action object", () => {
     const workout = {
         id: "123",
         title: "test workout",
-        totalTime: 10,
         exercises: []
     }
     const action = actions.addWorkout(workout);
@@ -33,7 +32,6 @@ test("should add workout to database and store", (done) => {
     const workout = {
         id: "x",
         title: "leg workout",
-        totalTime: 0,
         exercises: [],
         index: 2
     };
@@ -44,15 +42,13 @@ test("should add workout to database and store", (done) => {
             workout: {
                 id: expect.any(String),
                 title: "leg workout",
-                totalTime: 0,
                 exercises: []
             }
         });
         return database.ref(`users/test/workouts/${actions[0].workout.id}`).once("value");
     }).then((snapshot) => {
         expect(snapshot.val()).toEqual({
-            title: "leg workout",
-            totalTime: 0
+            title: "leg workout"
         });
         done();
     });
@@ -116,12 +112,10 @@ test("should return FETCH_WORKOUTS action object", () => {
     const workouts = [
         {
             id: "123",
-            title: "leg workout",
-            totalTime: 60
+            title: "leg workout"
         }, {
             id: "456",
-            title: "shoulder workout",
-            totalTime: 120
+            title: "shoulder workout"
         }
     ]
     const action = actions.fetchWorkouts(workouts);

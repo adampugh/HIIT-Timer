@@ -42,7 +42,6 @@ test("should call startAddWorkout in createModal", () => {
     wrapper.find("button").simulate("click");
     expect(startAddWorkoutSpy).toHaveBeenCalledWith({
         title: "new workout",
-        totalTime: 0,
         exercises: [],
         index: workoutState.workouts.length
     });

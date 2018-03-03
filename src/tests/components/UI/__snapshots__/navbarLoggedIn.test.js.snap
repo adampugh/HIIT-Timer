@@ -19,7 +19,7 @@ exports[`should render navbarLoggedIn correctly 1`] = `
         <NavLink
           activeClassName="active"
           ariaCurrent="true"
-          to="/workouts"
+          to="/hiit-timer/workouts"
         >
           <h3>
             Workouts

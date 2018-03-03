@@ -10,11 +10,3 @@ test("should render Workouts correctly", () => {
         startFetchWorkouts={() => {}} />);
     expect(wrapper).toMatchSnapshot();
 });
-
-test("should call fetchWorkouts action in Workouts", () => {
-    const fetchWorkoutsSpy = jest.fn();
-    shallow(<Workouts 
-        workouts={workoutState.workouts}
-        startFetchWorkouts={fetchWorkoutsSpy} />);
-    expect(fetchWorkoutsSpy).toHaveBeenCalled();
-});

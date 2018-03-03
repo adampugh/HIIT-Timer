@@ -53,5 +53,9 @@ exports[`should render startWorkoutBanner correctly 1`] = `
       </h2>
     </div>
   </div>
+  <audio
+    id="beep"
+    src="beep.mp3"
+  />
 </div>
 `;

@@ -24,7 +24,7 @@ exports[`should render workoutsGrid correctly 1`] = `
             replace={false}
             to={
               Object {
-                "pathname": "/workouts/leg-workout/start",
+                "pathname": "/hiit-timer/workouts/leg-workout/start",
                 "state": Object {
                   "workout": Array [
                     Object {
@@ -47,7 +47,7 @@ exports[`should render workoutsGrid correctly 1`] = `
           >
             <workoutsBlock
               title="Leg Workout"
-              totalTime={60}
+              totalTime={2}
             />
           </Link>
           <div
@@ -57,7 +57,7 @@ exports[`should render workoutsGrid correctly 1`] = `
               replace={false}
               to={
                 Object {
-                  "pathname": "/workouts/leg-workout/edit",
+                  "pathname": "/hiit-timer/workouts/leg-workout/edit",
                   "state": Object {
                     "workout": Array [
                       Object {
@@ -103,7 +103,7 @@ exports[`should render workoutsGrid correctly 1`] = `
             replace={false}
             to={
               Object {
-                "pathname": "/workouts/shoulder-workout/start",
+                "pathname": "/hiit-timer/workouts/shoulder-workout/start",
                 "state": Object {
                   "workout": Array [
                     Object {
@@ -126,7 +126,7 @@ exports[`should render workoutsGrid correctly 1`] = `
           >
             <workoutsBlock
               title="Shoulder Workout"
-              totalTime={30}
+              totalTime={5}
             />
           </Link>
           <div
@@ -136,7 +136,7 @@ exports[`should render workoutsGrid correctly 1`] = `
               replace={false}
               to={
                 Object {
-                  "pathname": "/workouts/shoulder-workout/edit",
+                  "pathname": "/hiit-timer/workouts/shoulder-workout/edit",
                   "state": Object {
                     "workout": Array [
                       Object {
