@@ -25,7 +25,6 @@ export class CreateModal extends Component {
     handleOnClick = () => {
         let workout = {
             title: this.state.workoutUrl,
-            totalTime: 0,
             exercises: [],
             index: this.props.workoutIndex
         };

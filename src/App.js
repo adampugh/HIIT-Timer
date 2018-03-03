@@ -12,11 +12,11 @@ class App extends Component {
   render() {
     return (
       <Switch>
-        <PrivateRoute path="/workouts" exact component={workoutsPage} />  
-        <PrivateRoute path="/workouts/:id/start" component={startPage} />
-        <PrivateRoute path="/workouts/:id/edit" component={editPage} />
-        <Route path="/" exact component={homePage} />
-        <Redirect to="/" />
+        <PrivateRoute path="/hiit-timer/workouts" exact component={workoutsPage} />  
+        <PrivateRoute path="/hiit-timer/workouts/:id/start" component={startPage} />
+        <PrivateRoute path="/hiit-timer/workouts/:id/edit" component={editPage} />
+        <Route path="/hiit-timer" exact component={homePage} />
+        <Redirect to="/hiit-timer" />
       </Switch>
     );
   }

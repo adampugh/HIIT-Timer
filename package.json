@@ -61,11 +61,13 @@
     "whatwg-fetch": "2.0.3",
     "yup": "^0.24.1"
   },
+  "homepage": "https://adampugh.github.io/hiit-timer/",
   "scripts": {
     "serve": "live-server public/",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "deploy": "npm run build&&gh-pages -d build"
   },
   "devDependencies": {
     "eslint": "^4.16.0",
@@ -73,6 +75,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
+    "gh-pages": "^1.1.0",
     "live-server": "^1.2.0",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6"

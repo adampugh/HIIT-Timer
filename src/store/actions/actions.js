@@ -10,15 +10,11 @@ export const addWorkout = (workout) => ({
 });
 
 // could remove id? set by fb?
-export const startAddWorkout = ({id, title, totalTime, exercises, index}) => {
+export const startAddWorkout = ({title, exercises, index}) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
         const workout = {
-            // id,
             title,
-            totalTime,
-            // exercises is empty array - wont be saved to fb
-            // until exercise is passed - format then
             exercises
         };
         const workoutIndex = index;
@@ -30,7 +26,7 @@ export const startAddWorkout = ({id, title, totalTime, exercises, index}) => {
             }));
 
             dispatch(push({
-                pathname: `/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`,
+                pathname: `/hiit-timer/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`,
                 state: {
                     workout: [], 
                     workoutId: ref.key, 

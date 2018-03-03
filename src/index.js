@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux';
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 
 import './styles/styles.scss';
 import App from './App';
+import Loading from "./components/UI/loading";
 import registerServiceWorker from './registerServiceWorker';
 import reducer from "./store/reducers/reducer";
 import authReducer from "./store/reducers/auth";
 import { firebase } from "./firebase/firebase";
-// import { startFetchWorkouts } from "./store/actions/actions";
 import * as actions from "./store/actions/actions";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -53,7 +52,7 @@ const renderApp = () => {
     }
 };
 
-ReactDOM.render( <p>...loading</p>, document.getElementById('root'));
+ReactDOM.render( <Loading />, document.getElementById('root'));
 
 // ReactDOM.render( app, document.getElementById('root'));
 firebase.auth().onAuthStateChanged((user) => {
@@ -61,13 +60,13 @@ firebase.auth().onAuthStateChanged((user) => {
         store.dispatch(actions.login(user.uid));
         store.dispatch(actions.startFetchWorkouts()).then(() => {
             renderApp();
-            if (history.location.pathname === "/") {
-                history.push("/workouts");
+            if (history.location.pathname === "/hiit-timer") {
+                history.push("/hiit-timer/workouts");
             }
         });
     } else {
         store.dispatch(actions.logout());
         renderApp();
-        history.push("/");
+        history.push("/hiit-timer");
     }
 });

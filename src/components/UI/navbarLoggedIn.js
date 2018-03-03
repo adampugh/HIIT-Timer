@@ -10,7 +10,7 @@ export const NavbarLoggedIn = (props) => (
             <div className="navbar__items">
                 <h2>HIIT Timer</h2>
                 <div className="navbar__links">
-                    <NavLink to="/workouts"><h3>Workouts</h3></NavLink>
+                    <NavLink to="/hiit-timer/workouts"><h3>Workouts</h3></NavLink>
                     
                     <h3 onClick={props.startLogout}>Log Out</h3>
                 </div>

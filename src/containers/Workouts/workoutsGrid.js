@@ -34,13 +34,16 @@ class workoutsGrid extends Component {
                         <div className="workouts__grid">
                             {this.props.workouts.map((workout, index) =>
                                 <div key={workout.title}> 
-                                    <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/start`, state: {workout: workout.exercises, workoutId: workout.id}}}>
+                                    <Link to={{pathname:`/hiit-timer/workouts/${workout.title.split(" ").join("-").toLowerCase()}/start`, state: {workout: workout.exercises, workoutId: workout.id}}}>
                                         <WorkoutsBlock 
                                             title={workout.title}
-                                            totalTime={workout.totalTime} />
+                                            totalTime={
+                                                workout.exercises.length < 1 ? "0" :
+                                                Math.floor((workout.exercises.map((exercise) => +exercise.time).reduce((a, b) => a + b)) / 60)
+                                            }/>
                                     </Link>
                                     <div className="workoutsBlock__edit">
-                                        <Link to={{pathname:`/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`, state: {workout: workout.exercises, workoutId: workout.id, workoutIndex: index}}}>
+                                        <Link to={{pathname:`/hiit-timer/workouts/${workout.title.split(" ").join("-").toLowerCase()}/edit`, state: {workout: workout.exercises, workoutId: workout.id, workoutIndex: index}}}>
                                             <h3><i className="far fa-edit"></i> Edit</h3>
                                         </Link>
                                         <h3 onClick={() => this.handleDeleteModal(workout.id)}><i className="far fa-trash-alt"></i> Delete</h3>

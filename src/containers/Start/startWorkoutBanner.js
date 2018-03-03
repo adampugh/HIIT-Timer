@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+
+import beep from "../../assets/audio/beep.mp3";
 var moment = require("moment");
 var momentDurationFormatSetup = require("moment-duration-format");
+
 
 
 class startWorkoutBanner extends Component {
@@ -55,6 +58,7 @@ class startWorkoutBanner extends Component {
             } else if (this.state.paused) {
                 clearInterval(interval);
             } else {
+                document.getElementById("beep").play();
                 clearInterval(interval);
                 this.nextExercise();
             }
@@ -105,6 +109,7 @@ class startWorkoutBanner extends Component {
                         <h2>{moment.duration(this.state.totalTime, "seconds").format("mm:ss")}</h2>
                     </div>
                 </div>
+                <audio id="beep" ref="audio_tag" src={beep} />
             </div>
         )
         return startWorkoutBannerPage;

@@ -13,13 +13,14 @@ const customStyles = {
       }
 };
 
-const timeValues = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10",
+const minutesValues = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10",
                     "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21",
                     "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32",
                     "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43",
                     "44", "45", "46", "47", "48", "49", "50", "51", "52", "53",
-                    "54", "55", "56", "57", "58", "59"
-]
+                    "54", "55", "56", "57", "58", "59" ];
+
+const secondsValues = ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"];
 
 export const EditModal = (props) => (
     <Modal 
@@ -55,11 +56,11 @@ export const EditModal = (props) => (
                         <div className="exerciseGrid__timeCol">
                             <label>Time</label>
                             <Field component="select" className="modal--edit__numberInput1" type="text" max="59" name="exerciseMinutes">
-                                {timeValues.map(item => <option key={`exerciseMin${item}`} value={item}>{item}</option>)}
+                                {minutesValues.map(item => <option key={`exerciseMin${item}`} value={item}>{item}</option>)}
                             </Field>
                             :
                             <Field component="select" className="modal--edit__numberInput2" type="text" max="59" name="exerciseSeconds">
-                                {timeValues.map(item => <option key={`exerciseSec${item}`} value={item}>{item}</option>)}
+                                {secondsValues.map(item => <option key={`exerciseSec${item}`} value={item}>{item}</option>)}
                             </Field>
                         </div>
 
@@ -93,11 +94,11 @@ export const EditModal = (props) => (
                             <div className="exerciseGrid__timeCol">
                                 <label>Time</label>
                                 <Field component="select" className="modal--edit__numberInput1" type="text" max="59" name="breakMinutes">
-                                    {timeValues.map(item => <option key={`breakMin${item}`} value={item}>{item}</option>)}
+                                    {minutesValues.map(item => <option key={`breakMin${item}`} value={item}>{item}</option>)}
                                 </Field>
                                 :
                                 <Field component="select" className="modal--edit__numberInput2" type="text" max="59" name="breakSeconds">
-                                    {timeValues.map(item => <option key={`breakSec${item}`} value={item}>{item}</option>)}
+                                    {secondsValues.map(item => <option key={`breakSec${item}`} value={item}>{item}</option>)}
                                 </Field>
                             </div>
                             <div className="exerciseGrid__colorCol">
