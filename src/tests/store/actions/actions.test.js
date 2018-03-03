@@ -24,7 +24,12 @@ test("should return ADD_WORKOUT action object", () => {
 });
 
 test("should add workout to database and store", (done) => {
-    const store = createMockStore({workouts: []});
+    const store = createMockStore({
+        workouts: [], 
+        auth: {
+            uid: "test"
+        }
+    });
     const workout = {
         id: "x",
         title: "leg workout",
@@ -43,7 +48,7 @@ test("should add workout to database and store", (done) => {
                 exercises: []
             }
         });
-        return database.ref(`workouts/${actions[0].workout.id}`).once("value");
+        return database.ref(`users/test/workouts/${actions[0].workout.id}`).once("value");
     }).then((snapshot) => {
         expect(snapshot.val()).toEqual({
             title: "leg workout",
@@ -63,7 +68,12 @@ test("should return DELETE_WORKOUT action object", () => {
 });
 
 test("should remove workout from store", (done) => {
-    const store = createMockStore({workouts: []});
+    const store = createMockStore({
+        workouts: [],
+        auth: {
+            uid: "test"
+        }
+    });
     const id = "x";
     store.dispatch(actions.startDeleteWorkout(id)).then(() => {
         const actions = store.getActions();

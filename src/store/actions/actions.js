@@ -11,7 +11,8 @@ export const addWorkout = (workout) => ({
 
 // could remove id? set by fb?
 export const startAddWorkout = ({id, title, totalTime, exercises, index}) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const workout = {
             // id,
             title,
@@ -21,7 +22,7 @@ export const startAddWorkout = ({id, title, totalTime, exercises, index}) => {
             exercises
         };
         const workoutIndex = index;
-        return database.ref("workouts").push(workout).then((ref) => {
+        return database.ref(`users/${uid}/workouts`).push(workout).then((ref) => {
 
             dispatch(addWorkout({
                 id: ref.key,
@@ -48,8 +49,9 @@ export const deleteWorkout = (id) => ({
 });
 
 export const startDeleteWorkout = (id) => {
-    return (dispatch) => {
-        return database.ref(`workouts/${id}`).remove().then((ref) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/workouts/${id}`).remove().then((ref) => {
             dispatch(deleteWorkout(id));
         });
     };
@@ -64,8 +66,9 @@ export const addExercise = (exercise, workoutId) => ({
 });
 
 export const startAddExercise = (exercise, workoutId) => {
-    return (dispatch) => {
-        database.ref(`workouts/${workoutId}/exercises`).push(exercise).then((ref) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        database.ref(`users/${uid}/workouts/${workoutId}/exercises`).push(exercise).then((ref) => {
             dispatch(addExercise({
                 id: ref.key,
                 ...exercise
@@ -83,8 +86,9 @@ export const deleteExercise = (index, workoutId) => ({
 });
 
 export const startDeleteExercise = (index, workoutId, exerciseId) => {
-    return (dispatch) => {
-        database.ref(`workouts/${workoutId}/exercises/${exerciseId}`).remove().then((ref) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        database.ref(`users/${uid}/workouts/${workoutId}/exercises/${exerciseId}`).remove().then((ref) => {
             dispatch(deleteExercise(index, workoutId));
         });
     };
@@ -98,8 +102,9 @@ export const fetchWorkouts = (workouts) => ({
 });
 
 export const startFetchWorkouts = () => {
-    return (dispatch) => {
-        return database.ref("workouts").once("value").then((snapshot) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/workouts`).once("value").then((snapshot) => {
             const workouts = [];
             snapshot.forEach((childSnapshot) => {
                 // convert exercises obj into array
