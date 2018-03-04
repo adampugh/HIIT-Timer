@@ -16,7 +16,7 @@ import { firebase } from "./firebase/firebase";
 import * as actions from "./store/actions/actions";
 
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const composeEnhancers = process.env.NODE_ENV === "development" || "test" ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose : compose;
+let composeEnhancers = process.env.NODE_ENV === "production" ? compose : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
 
