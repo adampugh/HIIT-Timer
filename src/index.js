@@ -15,7 +15,10 @@ import authReducer from "./store/reducers/auth";
 import { firebase } from "./firebase/firebase";
 import * as actions from "./store/actions/actions";
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = process.env.NODE_ENV === "development" || "test" ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose : compose;
+
+
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory()

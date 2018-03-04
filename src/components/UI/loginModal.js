@@ -43,7 +43,7 @@ export const LoginModal = (props) => (
                 <img src={GoogleIcon} alt="google logo" />
                 <span>Sign in with Google</span>
             </button>
-            <button className="modal__login-button">
+            <button onClick={props.startLogin} className="modal__login-button">
                 <img src={FacebookIcon} alt="facebook logo" />
                 <span>Sign in with Facebook</span>
             </button>
