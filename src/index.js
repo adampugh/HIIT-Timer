@@ -6,6 +6,7 @@ import thunk from "redux-thunk";
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 
+import 'normalize.css';
 import './styles/styles.scss';
 import App from './App';
 import Loading from "./components/UI/loading";
