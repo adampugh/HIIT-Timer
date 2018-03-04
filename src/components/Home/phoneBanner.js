@@ -6,11 +6,11 @@ const phoneBanner = (props) => (
         <div className="container">
             <div className="phoneBanner__grid">
                 <img src={PhoneImage} alt="phone" />
-                <div>
-                    <h2>This is some text that is good but might not be. Don't ask me. Where Black Friday comsumers try to spend and where are those orders coming from.</h2>
-                    <h2>This is some text that is good but might not be. Don't ask me. Where Black Friday comsumers try to spend and where are those orders coming from.</h2>
+                <div className="phoneBanner__grid__panel">
+                    <h3>High-intensity interval-training (HIIT) workouts are designed to build muscle and burn fat in a short period of time. Research has shown that HIIT regiments have successfully produced significant reductions in the fat mass of the whole-body.</h3>
+                    <h3>HIIT Timer allows you to get a full body cardiovascular workout wherever you are. Workout using your mobile, tablet or laptop.</h3>
                     <button 
-                        className="btn"
+                        className="btn--blue"
                         onClick={props.handleOpenModal}
                         >Sign Up</button>
                 </div>

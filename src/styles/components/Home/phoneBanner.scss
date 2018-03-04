@@ -1,6 +1,6 @@
 .phoneBanner {
     background: linear-gradient(141deg, rgba(106, 91, 204, 0.6) 0%, rgba(63, 119, 223, 0.6) 51%, rgba(70, 178, 218, 0.6) 75%);
-    color: white;
+    // color: white;
     padding: 80px 0;
 }
 
@@ -17,6 +17,17 @@
         font-family: 'Montserrat', sans-serif;
         padding: 40px 0;
         font-weight: 300;
+        margin-bottom: 20px;
+    }
+    .phoneBanner__grid__panel {
+        background: white;
+        color: #b3b3b3;
+        padding: 50px;
+        border-radius: 10px;
+        @include boxshadow;
+        button {
+            margin-top: 20px;
+        }
     }
 }
 

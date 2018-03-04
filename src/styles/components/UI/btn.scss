@@ -5,13 +5,41 @@
     color: white;
     padding: 10px 30px;
     font-size: 1.6em;
-    -webkit-transition: background-color .5s ease-out;
-    -moz-transition: background-color .5s ease-out;
-    -o-transition: background-color .5s ease-out;
-    transition: background-color .5s ease-out;
-    &:hover {
-        background: white;
-        color: rgb(146, 135, 216);
-        cursor: pointer;
+}
+
+.btn--blue {
+    background: $purple-gradient;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 10px 30px;
+    font-size: 1.6em;
+    
+}
+
+
+@media (min-width: $desktop-breakpoint) {
+    .btn--blue {
+        -webkit-transition: background-color .5s ease-out;
+        -moz-transition: background-color .5s ease-out;
+        -o-transition: background-color .5s ease-out;
+        transition: background-color .5s ease-out;
+        &:hover {
+            background-color: rgb(146, 135, 216);
+            cursor: pointer;
+            @include boxshadow;
+        }
+    }
+
+    .btn {
+        -webkit-transition: background-color .5s ease-out;
+        -moz-transition: background-color .5s ease-out;
+        -o-transition: background-color .5s ease-out;
+        transition: background-color .5s ease-out;
+        &:hover {
+            background: white;
+            color: rgb(146, 135, 216);
+            cursor: pointer;
+        }
     }
 }

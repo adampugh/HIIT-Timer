@@ -105,7 +105,7 @@ class startWorkoutBanner extends Component {
                         <h3>{this.state.paused ? '▶' : "▌▌"}</h3>
                     </div>
                     <div>
-                        <h3>Total Time</h3>
+                        <h3>Total</h3>
                         <h2>{moment.duration(this.state.totalTime, "seconds").format("mm:ss")}</h2>
                     </div>
                 </div>

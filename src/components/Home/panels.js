@@ -13,17 +13,17 @@ const panels = () => {
                     <div className="homecontent__panel">
                         <img src={armIcon} alt="Arm icon" />
                         <h3>Create Workouts</h3>
-                        <p>This is some text that is good but might not be. Don't ask me. Where Black Friday comsumers try to spend and where are those orders coming from.</p>
+                        <p>Create workouts from scratch by first entering a workout title. Add exercises and customize the workout. Start the clock and get exercising!</p>
                     </div>
                     <div className="homecontent__panel">
                         <img src={dumbbellIcon} alt="Dumbbell icon" />
                         <h3>Customize Workouts</h3>
-                        <p>This is some text that is good but might not be. Don't ask me. Where Black Friday comsumers try to spend and where are those orders coming from.</p>
+                        <p>Add exercises that suit your goals for losing weight or building muscle. Choose to include breaks and different colours for each exercise.</p>
                     </div>
                     <div className="homecontent__panel">
                         <img src={pencilIcon} alt="Pencil icon" />
                         <h3>Edit Workout</h3>
-                        <p>This is some text that is good but might not be. Don't ask me. Where Black Friday comsumers try to spend and where are those orders coming from.</p>
+                        <p>Delete and add workouts to adapt to your schedule or workout regime. Update exercises to continue your progression and help you reach your goals.</p>
                     </div>
                 </div>
             </div>

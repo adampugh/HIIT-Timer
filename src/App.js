@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 
 import homePage from './components/Home/home';
 import workoutsPage from "./containers/Workouts/Workouts";
 import startPage from "./containers/Start/Start";
 import editPage from "./containers/Edit/Edit";
 import PrivateRoute from "./routers/privateRoute";
-
+import PublicRoute from "./routers/publicRoute";
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
         <PrivateRoute path="/hiit-timer/workouts" exact component={workoutsPage} />  
         <PrivateRoute path="/hiit-timer/workouts/:id/start" component={startPage} />
         <PrivateRoute path="/hiit-timer/workouts/:id/edit" component={editPage} />
-        <Route path="/hiit-timer" exact component={homePage} />
+        <PublicRoute path="/hiit-timer" exact component={homePage} />
         <Redirect to="/hiit-timer" />
       </Switch>
     );
