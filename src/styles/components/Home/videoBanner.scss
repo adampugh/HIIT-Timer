@@ -5,8 +5,6 @@ video {
     object-fit: cover;
 }
 
-// rgba(17, 17, 17, 0.6);
-
 
 .video__overlay {
     background: linear-gradient(141deg, rgba(106, 91, 204, 0.6) 0%, rgba(63, 119, 223, 0.6) 51%, rgba(70, 178, 218, 0.6) 75%);
@@ -39,11 +37,10 @@ video {
         font-size: 1.8em;
         margin: 0 0;
         padding: 0 2em;
-        // margin-bottom: 250px;
     }
     button {
         margin-top: 60px;
-        margin-bottom: 150px;
+        margin-bottom: 80px;
     }
 }
 
@@ -55,6 +52,10 @@ video {
     .video__overlay {
         input {
             width: 55%;
+        }
+        button {
+            margin-top: 60px;
+            margin-bottom: 150px;
         }
     }
     video {

@@ -6,7 +6,6 @@ var moment = require("moment");
 var momentDurationFormatSetup = require("moment-duration-format");
 
 
-
 class startWorkoutBanner extends Component {
     state = {
         position: 0,
@@ -16,7 +15,6 @@ class startWorkoutBanner extends Component {
         currentTime: 0
     }
     
-    // startTimer - get time from workout / if 0 increase position / add to total time
     startTimer = () => {
         if (this.state.currentTime === 0) {
             this.setState({
@@ -30,7 +28,6 @@ class startWorkoutBanner extends Component {
         this.startExercise();
     }
 
-    // display number of seconds left
     startExercise(exerciseTime) {
         this.exerciseInterval();
     }
@@ -79,8 +76,6 @@ class startWorkoutBanner extends Component {
         }
     }
 
-    // format seconds as minutes in the render function
-
     render() {
         let customColor;
         if (this.props.workout[this.state.position]) {
@@ -115,13 +110,5 @@ class startWorkoutBanner extends Component {
         return startWorkoutBannerPage;
     }
 };
-
-
-
-// '▷' : '❘ ❘'
-
-// <h2>{this.state.paused ? <span><i className="fas fa-play"></i></span>
-//     : <span><i className="fas fa-pause"></i></span> }</h2>
-
 
 export default startWorkoutBanner;

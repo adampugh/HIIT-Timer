@@ -15,18 +15,10 @@ import authReducer from "./store/reducers/auth";
 import { firebase } from "./firebase/firebase";
 import * as actions from "./store/actions/actions";
 
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let composeEnhancers = process.env.NODE_ENV === "production" ? compose : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const history = createHistory();
+const middleware = routerMiddleware(history);
 
-
-
-// Create a history of your choosing (we're using a browser history in this case)
-const history = createHistory()
-
-// Build the middleware for intercepting and dispatching navigation actions
-const middleware = routerMiddleware(history)
-
-// routing comes from react-router-redux
 const store = createStore(
     combineReducers({
         reducer,
@@ -57,7 +49,6 @@ const renderApp = () => {
 
 ReactDOM.render( <Loading />, document.getElementById('root'));
 
-// ReactDOM.render( app, document.getElementById('root'));
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         store.dispatch(actions.login(user.uid));

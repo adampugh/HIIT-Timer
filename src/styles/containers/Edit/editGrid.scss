@@ -24,12 +24,10 @@
     cursor: pointer;
     svg, i {
         font-size: 40px;
-    }
-    
+    }  
 }
 
 @media only screen and (min-width: $desktop-breakpoint) {
-
     .edit__addBlock {
         width: 80%;
         max-width: 800px;

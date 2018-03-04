@@ -9,7 +9,6 @@ export const addWorkout = (workout) => ({
     workout
 });
 
-// could remove id? set by fb?
 export const startAddWorkout = ({title, exercises, index}) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;

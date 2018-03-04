@@ -40,7 +40,6 @@ export class Edit extends Component {
 
 
     render() {
-        // const redirect = <Redirect to="/workouts" />
         let editPage = !this.props.workouts[this.props.location.state.workoutIndex] ? 
             <Redirect to="/workouts" /> : (
                 <div>
