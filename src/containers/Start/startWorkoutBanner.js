@@ -97,7 +97,7 @@ class startWorkoutBanner extends Component {
                     </div>
                     <div>
                         <h3>{this.state.paused ? "Play" : "Pause"}</h3>
-                        <h3>{this.state.paused ? '▶' : "▌▌"}</h3>
+                        <h3>{this.state.paused ? '►' : "❚❚"}</h3>
                     </div>
                     <div>
                         <h3>Total</h3>
