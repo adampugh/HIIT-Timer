@@ -67,12 +67,12 @@ export const EditModal = (props) => (
                         <div className="exerciseGrid__colorCol">
                             <label>Color</label>
                             <Field component="select" name="exerciseColor" style={{backgroundColor: props.values.exerciseColor}}>
-                                <option value="#40b3e1"></option>
-                                <option value="#acff82"></option>
-                                <option value="#fedc45"></option>
-                                <option value="#fec345"></option>
-                                <option value="#fe6145"></option>
-                                <option value="#b145fe"></option>
+                                <option value="#40b3e1">Blue</option>
+                                <option value="#acff82">Green</option>
+                                <option value="#fedc45">Yellow</option>
+                                <option value="#fec345">Orange</option>
+                                <option value="#fe6145">Red</option>
+                                <option value="#b145fe">Purple</option>
                             </Field>
                         </div>
                     </div>
@@ -104,12 +104,12 @@ export const EditModal = (props) => (
                             <div className="exerciseGrid__colorCol">
                                 <label>Color</label>
                                 <Field component="select" name="breakColor" style={{backgroundColor: props.values.breakColor}}>
-                                    <option value="#40b3e1"></option>
-                                    <option value="#acff82"></option>
-                                    <option value="#fedc45"></option>
-                                    <option value="#fec345"></option>
-                                    <option value="#fe6145"></option>
-                                    <option value="#b145fe"></option>
+                                    <option value="#40b3e1">Blue</option>
+                                    <option value="#acff82">Green</option>
+                                    <option value="#fedc45">Yellow</option>
+                                    <option value="#fec345">Orange</option>
+                                    <option value="#fe6145">Red</option>
+                                    <option value="#b145fe">Purple</option>
                                 </Field>
                             </div>
                         </div>
