@@ -8,7 +8,7 @@ const panels = () => {
     return (
         <div className="homecontent__wrapper">
             <div className="container homecontent">
-                <h2>Create workouts today for fantasic that are actually really fun.</h2>
+                <h2>Create workouts today and get in shape!</h2>
                 <div className="grid--3to1 homecontent__grid">
                     <div className="homecontent__panel">
                         <img src={armIcon} alt="Arm icon" />
