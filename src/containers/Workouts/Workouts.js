@@ -13,6 +13,10 @@ export class Workouts extends Component {
         deleteModalOpen: false
     }
 
+    componentDidMount () {
+        window.scrollTo(0, 0);
+    }
+
     openCreateModal = () => {
         this.setState({
             createModalOpen: true

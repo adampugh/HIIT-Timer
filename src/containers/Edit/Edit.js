@@ -14,6 +14,10 @@ export class Edit extends Component {
         deleteModalOpen: false
     }
 
+    componentDidMount () {
+        window.scrollTo(0, 0);
+    }
+
     openEditModal = () => {
         this.setState({
             editModalOpen: true
