@@ -18,6 +18,9 @@ exports[`should render createModal correctly 1`] = `
   shouldReturnFocusAfterClose={true}
   style={
     Object {
+      "content": Object {
+        "position": "absolute",
+      },
       "overlay": Object {
         "background": "rgba(0, 0, 0, 0.6)",
         "zIndex": 2000,

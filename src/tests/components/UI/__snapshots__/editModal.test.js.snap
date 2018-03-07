@@ -32,9 +32,7 @@ exports[`should render EditModal correctly 1`] = `
     >
       <div />
       <div>
-        <h3
-          onClick={[Function]}
-        >
+        <h3>
           Add Exercise
         </h3>
       </div>
@@ -539,22 +537,34 @@ exports[`should render EditModal correctly 1`] = `
             >
               <option
                 value="#40b3e1"
-              />
+              >
+                Blue
+              </option>
               <option
                 value="#acff82"
-              />
+              >
+                Green
+              </option>
               <option
                 value="#fedc45"
-              />
+              >
+                Yellow
+              </option>
               <option
                 value="#fec345"
-              />
+              >
+                Orange
+              </option>
               <option
                 value="#fe6145"
-              />
+              >
+                Red
+              </option>
               <option
                 value="#b145fe"
-              />
+              >
+                Purple
+              </option>
             </Field>
           </div>
         </div>

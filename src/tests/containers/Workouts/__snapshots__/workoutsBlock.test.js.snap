@@ -8,8 +8,7 @@ exports[`should render editBlock correctly 1`] = `
     Leg Workout
   </h1>
   <h3>
-    60
-     Minutes
+    60 Minutes
   </h3>
   <i
     className="far fa-play-circle"
