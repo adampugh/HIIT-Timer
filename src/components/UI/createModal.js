@@ -7,7 +7,10 @@ import * as actions from "../../store/actions/actions";
 const customStyles = {
     overlay : {
         zIndex: 2000,
-        background: "rgba(0, 0, 0, 0.6)"
+        background: "rgba(0, 0, 0, 0.6)",
+      },
+      content: {
+          position: "absolute"
       }
 }
 

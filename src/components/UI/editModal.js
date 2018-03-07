@@ -35,7 +35,7 @@ export const EditModal = (props) => (
         <div className="modal__box">
             <div className="modal__header">
                 <div></div>
-                <div><h3 onClick={() => console.log(props.isValid)}>Add Exercise</h3></div>
+                <div><h3>Add Exercise</h3></div>
                 <div className="modal__close">
                     <h3>
                         <span onClick={props.handleCloseModal}>
