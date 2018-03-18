@@ -40,7 +40,9 @@
         margin: 0 auto;
         }
         .phoneBanner__grid__panel {
+            align-self: center;
             padding: 50px;
+            height: 65%;
             button {
                 margin-top: 40px;
             }

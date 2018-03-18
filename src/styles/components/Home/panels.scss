@@ -25,9 +25,11 @@
     background: #fcfbfb;
     margin: 1em;
     padding-top: 1em;
+    border-radius: 10px;
     @include boxshadow;
     h3 {
         padding-top: 1em;
+        // font-size: 1.17em;
         color: slateblue;
     }
     img {
@@ -35,9 +37,10 @@
         width: 100px;
     }
     p {
-        padding: 1.5em;
+        padding: 1.17em;
         margin: 0 1em;
         color: grey;
+        font-size: 1.1em;
     }
 }
 
